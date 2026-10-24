@@ -151,7 +151,7 @@ function page(){return $('pageSel').value||'index.html';}
 function loadView(){deselect();$('view').src='/'+page()+'?st='+Date.now();}
 $('pageSel').onchange=()=>{ops[page()]=ops[page()]||[];loadView();};
 $('refBtn').onclick=()=>{loadView();pendingReplay();};
-$('vpBtn').onclick=()=>{const s=$('stage');s.classList.toggle('mob');$('vpBtn').textContent=s.classList.toggle?'':'';const m=s.classList.contains('mob');$('vpBtn').textContent=m?'🖥️ דסקטופ':'📱 נייד';};
+$('vpBtn').onclick=()=>{const s=$('stage');s.classList.toggle('mob');$('vpBtn').textContent=s.classList.contains('mob')?'🖥️ דסקטופ':'📱 נייד';};
 $('helpBtn').onclick=()=>{const h=$('help');h.style.display=h.style.display==='block'?'none':'block';};
 // ---------- ops ----------
 function oplist(p){ops[p]=ops[p]||[];return ops[p];}
@@ -167,7 +167,8 @@ function updateCnt(){
   const c=$('cnt');if(c)c.textContent=n?('('+n+')'):'';
 }
 // apply an ordered op list to a document (source parse at save-time, or live preview replay)
-function applyOps(doc,list){
+function applyOps(doc,list,strip){
+  if(strip===undefined)strip=true;
   let missed=0;
   for(const op of list){
     const el=doc.querySelector(op.p);
@@ -190,9 +191,10 @@ function applyOps(doc,list){
       else if(el.parentElement)el.parentElement.insertBefore(node,el.nextElementSibling);
     }
   }
-  // strip editing-session markers before anything is saved
-  doc.querySelectorAll('[data-st-id]').forEach(e=>e.removeAttribute('data-st-id'));
-  doc.querySelectorAll('.stNew').forEach(e=>e.classList.remove('stNew'));
+  if(strip){ // strip editing-session markers before anything is saved
+    doc.querySelectorAll('[data-st-id]').forEach(e=>e.removeAttribute('data-st-id'));
+    doc.querySelectorAll('.stNew').forEach(e=>e.classList.remove('stNew'));
+  }
   return missed;
 }
 // replay pending ops onto the live preview (used after reload / revert)
@@ -201,8 +203,7 @@ function pendingReplay(){
     const l=ops[page()]||[];
     if(!l.length)return;
     const d=idoc();if(!d||!d.body)return;
-    applyOps(d,l.map(o=>Object.assign({},o,{p:o.p})));
-    // re-apply needs data-st-id markers intact for further edits; re-tag new blocks
+    applyOps(d,l.map(o=>Object.assign({},o,{p:o.p})),false); // keep markers so paths stay stable for further edits
   },700);
 }
 // ---------- edit mode ----------
