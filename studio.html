@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>סטודיו | עריכה חזותית</title>
+<style>
+:root{--gold:#b98a2f;--ink:#161512;--panel:#1e1c18;--line:#3a352c;--txt:#f3efe6;--dim:#a89f8d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Assistant',system-ui,sans-serif;background:var(--ink);color:var(--txt);min-height:100vh}
+button{font:inherit;cursor:pointer}
+#gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.gate-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;max-width:430px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.gate-card h1{font-size:22px;margin-bottom:6px;color:var(--gold)}
+.gate-card p{font-size:14px;color:var(--dim);margin-bottom:18px;line-height:1.6}
+.gate-card label{display:block;font-size:13px;color:var(--dim);margin:12px 0 5px}
+.gate-card input{width:100%;padding:11px 13px;border-radius:9px;border:1px solid var(--line);background:#141210;color:var(--txt);font-size:15px}
+.btn{display:inline-block;background:var(--gold);color:#161512;border:none;border-radius:9px;padding:11px 20px;font-weight:700;font-size:15px}
+.btn:disabled{opacity:.5;cursor:default}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+#gate .btn{width:100%;margin-top:20px}
+.err{color:#e08080;font-size:13px;margin-top:10px;min-height:18px}
+#app{display:none;flex-direction:column;height:100vh}
+#bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 12px;background:var(--panel);border-bottom:1px solid var(--line);z-index:10}
+#bar .ttl{font-weight:700;color:var(--gold);margin-left:6px;font-size:15px}
+#bar select,#bar button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:13.5px}
+#bar select:focus,#bar button:focus{outline:1px solid var(--gold)}
+#bar button.on{background:var(--gold);color:#161512;border-color:var(--gold);font-weight:700}
+#saveBtn{background:var(--gold);color:#161512;font-weight:700;border-color:var(--gold)}
+#wrap{flex:1;overflow:auto;display:flex;justify-content:center;background:#0c0b09;padding:14px}
+#stage{transition:width .25s;width:100%;height:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.55)}
+#stage.mob{width:390px}
+#view{width:100%;height:100%;border:0;background:#fff}
+#panel{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:var(--panel);border:1px solid var(--gold);border-radius:14px;padding:12px 16px;display:none;flex-wrap:wrap;align-items:center;gap:9px;max-width:94vw;box-shadow:0 16px 44px rgba(0,0,0,.6);z-index:30;font-size:13.5px}
+#panel .tag{color:var(--gold);font-weight:700;font-size:13px}
+#panel button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px}
+#panel input[type=color]{width:34px;height:30px;border:1px solid var(--line);border-radius:6px;background:#2a2620;padding:2px}
+#toast{position:fixed;top:64px;left:50%;transform:translateX(-50%);background:var(--gold);color:#161512;font-weight:700;padding:10px 20px;border-radius:10px;display:none;z-index:60;max-width:92vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#toast.bad{background:#a33;color:#fff}
+#hist{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:18px}
+#hist .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;max-height:80vh;overflow:auto;padding:20px}
+#hist h2{font-size:17px;color:var(--gold);margin-bottom:4px}
+#hist .sub{font-size:12.5px;color:var(--dim);margin-bottom:14px}
+.hrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.hrow .m{flex:1;line-height:1.45}
+.hrow .d{color:var(--dim);font-size:11.5px;white-space:nowrap}
+.hrow button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:12px;white-space:nowrap}
+#help{display:none;background:#2a2620;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8;color:var(--dim);margin:8px 12px 0}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="gate-card">
+    <h1>סטודיו עריכה</h1>
+    <p>עריכה חזותית של האתר החי. השינויים נשמרים ישירות במערכת ומתפרסמים לאתר תוך כדקה, עם היסטוריית גירסאות מלאה ושחזור בלחיצה.</p>
+    <label>סיסמת סטודיו</label>
+    <input id="inPass" type="password" autocomplete="off" placeholder="הסיסמה שקיבלת">
+    <label>מפתח גישה (GitHub token)</label>
+    <input id="inTok" type="password" autocomplete="off" placeholder="github_pat_...">
+    <div class="err" id="gateErr"></div>
+    <button class="btn" id="gateBtn">כניסה לסטודיו</button>
+  </div>
+</div>
+<div id="app">
+  <div id="bar">
+    <span class="ttl">✦ סטודיו</span>
+    <select id="pageSel"></select>
+    <button id="vpBtn" title="מעבר תצוגת נייד/דסקטופ">📱 נייד</button>
+    <button id="editBtn">✏️ מצב עריכה</button>
+    <button id="refBtn">↻ רענון</button>
+    <button id="histBtn">🕘 היסטוריה ושחזור</button>
+    <button id="helpBtn">؟ עזרה</button>
+    <button id="saveBtn">💾 שמור ופרסם <span id="cnt"></span></button>
+    <button id="outBtn">יציאה</button>
+  </div>
+  <div id="help">• לוחצים על "מצב עריכה" ואז על כל אלמנט בעמוד: טקסט נערך ישירות במקום, תמונה מוחלפת מהלוח התחתון.<br>• אפשר גם לשנות צבע וגודל גופן, ולהסתיר אלמנטים. • "שמור ופרסם" מעלה את השינויים לאתר החי תוך כדקה. • כל שמירה נרשמת בהיסטוריה, ואפשר לשחזר כל גירסה קודמת בלחיצה.</div>
+  <div id="wrap"><div id="stage"><iframe id="view" title="תצוגת האתר"></iframe></div></div>
+  <div id="panel"></div>
+  <div id="hist"><div class="box"><h2>היסטוריית גירסאות</h2><div class="sub">כל שמירה היא נקודת זמן. שחזור מחזיר את העמוד הנוכחי לגירסה שנבחרה (גם השחזור עצמו נשמר בהיסטוריה).</div><div id="hlist"></div><div style="text-align:left;margin-top:12px"><button class="btn-ghost btn" onclick="document.getElementById('hist').style.display='none'">סגור</button></div></div></div>
+</div>
+<div id="toast"></div>
+<script>
+'use strict';
+const CFG={owner:'orws88gold',repo:'tno-ai',branch:'main',pass:'e7ab4059dd91a268f8b2cfff5853df0b4d3b15104c19a643e32878ae11d330f5'};
+const API='https://api.github.com';
+const $=id=>document.getElementById(id);
+let token=localStorage.getItem('st_tok')||'';
+let editMode=false, sel=null, selPath='', busy=false;
+let pending={};   // page -> { selectorPath: {html?, style?{}, src?, upload?{path,b64,done}} }
+let originals={}; // page -> { selectorPath: {html, styleAttr, src} }
+const TEXT_TAGS=['H1','H2','H3','H4','H5','H6','P','SPAN','A','LI','BUTTON','STRONG','EM','SMALL','FIGCAPTION','DT','DD','LABEL','TD','TH','BLOCKQUOTE'];
+function toast(m,bad){const t=$('toast');t.textContent=m;t.className=bad?'bad':'';t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',bad?9000:5000);}
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+function b64e(s){return btoa(unescape(encodeURIComponent(s)));}
+function b64d(s){return decodeURIComponent(escape(atob(s.replace(/\s/g,''))));}
+async function gh(path,opts){opts=opts||{};const r=await fetch(API+'/repos/'+CFG.owner+'/'+CFG.repo+path,{method:opts.method||'GET',body:opts.body,headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}});if(!r.ok){let t='';try{t=await r.text();}catch(e){}throw new Error('GitHub '+r.status+': '+t.slice(0,220));}return r.json();}
+// ---------- gate ----------
+async function tryEnter(){
+  const p=$('inPass').value.trim(), tk=$('inTok').value.trim();
+  $('gateErr').textContent='';
+  if((await sha256(p))!==CFG.pass){$('gateErr').textContent='סיסמה שגויה';return;}
+  if(tk)token=tk;
+  if(!token){$('gateErr').textContent='נדרש מפתח גישה';return;}
+  $('gateBtn').disabled=true;$('gateBtn').textContent='מתחבר...';
+  try{await gh('');}
+  catch(e){$('gateErr').textContent='המפתח לא תקין או חסרה הרשאה (Contents: Read & write)';$('gateBtn').disabled=false;$('gateBtn').textContent='כניסה לסטודיו';return;}
+  localStorage.setItem('st_tok',token);localStorage.setItem('st_ok','1');
+  enterApp();
+}
+function enterApp(){$('gate').style.display='none';$('app').style.display='flex';loadPages();}
+$('gateBtn').onclick=tryEnter;
+$('inTok').addEventListener('keydown',e=>{if(e.key==='Enter')tryEnter();});
+$('outBtn').onclick=()=>{localStorage.removeItem('st_tok');localStorage.removeItem('st_ok');location.reload();};
+// ---------- pages ----------
+async function loadPages(){
+  let pages=['index.html'];
+  try{const t=await gh('/git/trees/'+encodeURIComponent(CFG.branch)+'?recursive=1');
+    const found=t.tree.filter(x=>x.type==='blob'&&/\.html$/i.test(x.path)&&!x.path.includes('/')&&x.path!=='studio.html').map(x=>x.path);
+    if(found.length)pages=found;
+  }catch(e){}
+  $('pageSel').innerHTML=pages.map(p=>'<option>'+p+'</option>').join('');
+  loadView();
+}
+function page(){return $('pageSel').value||'index.html';}
+function loadView(){deselect();$('view').src='/'+page()+'?st='+Date.now();}
+$('pageSel').onchange=loadView;
+$('refBtn').onclick=loadView;
+$('vpBtn').onclick=()=>{const s=$('stage');s.classList.toggle('mob');$('vpBtn').textContent=s.classList.contains('mob')?'🖥️ דסקטופ':'📱 נייד';};
+$('helpBtn').onclick=()=>{const h=$('help');h.style.display=h.style.display==='block'?'none':'block';};
+// ---------- edit mode ----------
+function iwin(){return $('view').contentWindow;}
+function idoc(){return $('view').contentDocument;}
+$('editBtn').onclick=()=>{editMode=!editMode;$('editBtn').classList.toggle('on',editMode);if(!editMode)deselect();toast(editMode?'מצב עריכה פעיל - לחץ על אלמנט בעמוד':'מצב עריכה כבוי');};
+$('view').addEventListener('load',()=>{setTimeout(inject,150);});
+function inject(){
+  const d=idoc();if(!d||!d.body)return;
+  if(!d.getElementById('st-css')){const st=d.createElement('style');st.id='st-css';
+    st.textContent='.stHover{outline:2px dashed #b98a2f!important;outline-offset:2px;cursor:pointer!important}.stSel{outline:3px solid #b98a2f!important;outline-offset:3px}.stEdit{outline:3px solid #2f8ab9!important;outline-offset:3px}';
+    d.head.appendChild(st);}
+  d.addEventListener('mouseover',e=>{if(!editMode||sel)return;if(e.target&&e.target.classList)e.target.classList.add('stHover');});
+  d.addEventListener('mouseout',e=>{if(e.target&&e.target.classList)e.target.classList.remove('stHover');});
+  d.addEventListener('click',e=>{if(!editMode)return;e.preventDefault();e.stopPropagation();pick(e.target);},true);
+}
+function pathOf(el){
+  const parts=[];
+  while(el&&el.nodeType===1&&el.tagName!=='HTML'){
+    let p=el.tagName.toLowerCase();
+    const par=el.parentElement;
+    if(par){const sib=[...par.children].filter(c=>c.tagName===el.tagName);if(sib.length>1)p+=':nth-of-type('+(sib.indexOf(el)+1)+')';}
+    parts.unshift(p);el=par;
+  }
+  return parts.join('>');
+}
+function isTextEl(el){
+  if(TEXT_TAGS.includes(el.tagName))return true;
+  if(el.tagName==='DIV'){for(const n of el.childNodes)if(n.nodeType===3&&n.textContent.trim())return true;}
+  return false;
+}
+function snapshot(el){
+  const pg=page(),k=pathOf(el);
+  originals[pg]=originals[pg]||{};
+  if(!originals[pg][k])originals[pg][k]={html:el.innerHTML,styleAttr:el.getAttribute('style'),src:el.tagName==='IMG'?el.getAttribute('src'):null};
+}
+function pick(el){
+  const W=iwin();
+  if(!(el instanceof W.HTMLElement))return;
+  if(el===d.body||el===d.documentElement)return;
+  deselect();
+  sel=el;selPath=pathOf(el);
+  snapshot(el);
+  sel.classList.add(isTextEl(sel)?'stEdit':'stSel');
+  if(isTextEl(sel)){
+    sel.contentEditable='true';sel.focus();
+    sel.addEventListener('input',onTextInput);
+    sel.addEventListener('paste',e=>{e.preventDefault();const t=(e.clipboardData||W.clipboardData).getData('text/plain');W.document.execCommand('insertText',false,t);});
+  }
+  buildPanel();
+}
+function onTextInput(){
+  if(!sel)return;
+  const pg=page();pending[pg]=pending[pg]||{};
+  const e=pending[pg][selPath]||{};e.html=sel.innerHTML;pending[pg][selPath]=e;
+  updateCnt();
+}
+function deselect(){
+  if(sel){sel.classList.remove('stSel','stEdit');sel.removeEventListener('input',onTextInput);if(sel.contentEditable==='true')sel.contentEditable='false';}
+  sel=null;selPath='';$('panel').style.display='none';
+}
+function rec(props){
+  const pg=page();pending[pg]=pending[pg]||{};
+  const e=pending[pg][selPath]||{};
+  Object.assign(e,props);
+  if(props.style)e.style=Object.assign(e.style||{},props.style);
+  pending[pg][selPath]=e;updateCnt();
+}
+function updateCnt(){
+  let n=0;for(const p in pending)n+=Object.keys(pending[p]).length;
+  $('cnt').textContent=n?('('+n+')'):'';
+}
+function buildPanel(){
+  const P=$('panel');if(!sel){P.style.display='none';return;}
+  const canText=isTextEl(sel),isImg=sel.tagName==='IMG';
+  let h='<span class="tag">&lt;'+sel.tagName.toLowerCase()+'&gt;</span>';
+  if(canText)h+='<span style="color:var(--dim)">עורכים ישירות בעמוד ✍️</span>';
+  h+='<button id="pSizeM">א־</button><button id="pSizeP">א+</button>';
+  h+='<input type="color" id="pColor" title="צבע טקסט">';
+  h+='<button id="pHide">🙈 הסתר</button>';
+  if(isImg)h+='<button id="pImgF">🖼️ החלף מקובץ</button><button id="pImgU">🔗 החלף מקישור</button>';
+  h+='<button id="pRevert">↩ בטל שינוי</button><button id="pClose">✕</button>';
+  P.innerHTML=h;P.style.display='flex';
+  $('pSizeM').onclick=()=>bumpSize(-1);
+  $('pSizeP').onclick=()=>bumpSize(1);
+  $('pColor').oninput=e=>{sel.style.color=e.target.value;rec({style:{color:e.target.value}});};
+  $('pHide').onclick=()=>{const off=sel.style.display!=='none';sel.style.display=off?'none':'';rec({style:{display:off?'none':''}});$('pHide').textContent=off?'👁️ הצג':'🙈 הסתר';};
+  if(isImg){$('pImgF').onclick=pickFile;$('pImgU').onclick=pickUrl;}
+  $('pRevert').onclick=revertEl;
+  $('pClose').onclick=deselect;
+}
+function bumpSize(d){
+  if(!sel)return;
+  const W=iwin();const cur=parseFloat(sel.dataset.stSize||W.getComputedStyle(sel).fontSize);
+  const nx=Math.max(9,cur+d*1.5);sel.dataset.stSize=nx;
+  sel.style.fontSize=nx+'px';rec({style:{fontSize:nx+'px'}});
+}
+function pickUrl(){
+  const u=prompt('הדבק קישור לתמונה:');if(!u)return;
+  sel.src=u;rec({src:u});
+}
+function pickFile(){
+  const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
+  inp.onchange=()=>{
+    const f=inp.files[0];if(!f)return;
+    if(f.size>3*1024*1024){toast('התמונה גדולה מדי (מעל 3MB)',true);return;}
+    const rd=new FileReader();
+    rd.onload=()=>{
+      const b64=rd.result.split(',')[1];
+      const safe='assets/img/studio-'+Date.now()+'-'+f.name.replace(/[^\w.\-]/g,'_');
+      sel.src=rd.result;
+      rec({src:safe,upload:{path:safe,b64:b64,done:false}});
+      toast('התמונה תועלה בשמירה הבאה');
+    };
+    rd.readAsDataURL(f);
+  };
+  inp.click();
+}
+function revertEl(){
+  const pg=page(),o=(originals[pg]||{})[selPath];
+  if(o){sel.innerHTML=o.html;if(o.styleAttr===null)sel.removeAttribute('style');else sel.setAttribute('style',o.styleAttr);if(o.src!==null&&sel.tagName==='IMG')sel.src=o.src;}
+  if(pending[pg]){delete pending[pg][selPath];if(!Object.keys(pending[pg]).length)delete pending[pg];}
+  updateCnt();deselect();toast('השינוי בוטל');
+}
+// ---------- save ----------
+$('saveBtn').onclick=async()=>{
+  if(busy)return;
+  const pages=Object.keys(pending).filter(p=>Object.keys(pending[p]).length);
+  if(!pages.length){toast('אין שינויים לשמירה');return;}
+  busy=true;$('saveBtn').disabled=true;$('saveBtn').textContent='שומר...';
+  try{
+    for(const p of pages)for(const k of Object.keys(pending[p])){
+      const e=pending[p][k];
+      if(e.upload&&!e.upload.done){
+        await gh('/contents/'+e.upload.path,{method:'PUT',body:JSON.stringify({message:'העלאת תמונה מהסטודיו: '+e.upload.path,content:e.upload.b64,branch:CFG.branch})});
+        e.upload.done=true;
+      }
+    }
+    for(const p of pages){
+      const cur=await gh('/contents/'+p+'?ref='+encodeURIComponent(CFG.branch));
+      const raw=b64d(cur.content);
+      const doc=new DOMParser().parseFromString(raw,'text/html');
+      let applied=0,missed=0;
+      for(const k of Object.keys(pending[p])){
+        const el=doc.querySelector(k);if(!el){missed++;continue;}
+        const e=pending[p][k];
+        if(e.html!==undefined)el.innerHTML=e.html;
+        if(e.src!==undefined){el.setAttribute('src',e.src);if(el.hasAttribute('srcset'))el.removeAttribute('srcset');}
+        if(e.style)for(const prop in e.style){if(e.style[prop]==='')el.style.removeProperty(prop.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()));else el.style[prop]=e.style[prop];}
+        applied++;
+      }
+      const out='<!DOCTYPE html>\n'+doc.documentElement.outerHTML;
+      await gh('/contents/'+p,{method:'PUT',body:JSON.stringify({message:'עריכה חזותית מהסטודיו ('+applied+' שינויים ב-'+p+')',content:b64e(out),sha:cur.sha,branch:CFG.branch})});
+      if(missed)toast('שים לב: '+missed+' אלמנטים לא נמצאו ולא נשמרו',true);
+      delete pending[p];delete originals[p];
+    }
+    updateCnt();deselect();
+    toast('נשמר בהצלחה! האתר החי מתעדכן תוך כדקה ✓');
+    setTimeout(loadView,25000);
+  }catch(err){toast('שגיאה בשמירה: '+err.message,true);}
+  busy=false;$('saveBtn').disabled=false;$('saveBtn').innerHTML='💾 שמור ופרסם <span id="cnt"></span>';updateCnt();
+};
+// ---------- history ----------
+$('histBtn').onclick=async()=>{
+  $('hist').style.display='flex';$('hlist').innerHTML='טוען...';
+  try{
+    const list=await gh('/commits?per_page=15&sha='+encodeURIComponent(CFG.branch));
+    $('hlist').innerHTML=list.map((c,i)=>{
+      const d=new Date(c.commit.committer.date);
+      return '<div class="hrow"><div class="m">'+esc(c.commit.message.split('\n')[0])+'</div><div class="d">'+d.toLocaleString('he-IL')+'</div>'+(i===0?'<span style="color:var(--dim);font-size:11px">נוכחי</span>':'<button data-sha="'+c.sha+'" data-d="'+d.toLocaleString('he-IL')+'">שחזר לכאן</button>')+'</div>';
+    }).join('');
+    $('hlist').querySelectorAll('button').forEach(b=>b.onclick=()=>restore(b.dataset.sha,b.dataset.d));
+  }catch(e){$('hlist').innerHTML='שגיאה: '+esc(e.message);}
+};
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+async function restore(sha,dateStr){
+  if(!confirm('לשחזר את '+page()+' לגירסה מ-'+dateStr+'?\nהמצב הנוכחי נשמר בהיסטוריה.'))return;
+  try{
+    const old=await gh('/contents/'+page()+'?ref='+sha);
+    const cur=await gh('/contents/'+page()+'?ref='+encodeURIComponent(CFG.branch));
+    await gh('/contents/'+page(),{method:'PUT',body:JSON.stringify({message:'שחזור '+page()+' לגירסה מ-'+dateStr,content:b64e(b64d(old.content)),sha:cur.sha,branch:CFG.branch})});
+    $('hist').style.display='none';
+    toast('שוחזר! האתר מתעדכן תוך כדקה ✓');
+    setTimeout(loadView,25000);
+  }catch(e){toast('שגיאה בשחזור: '+e.message,true);}
+}
+// ---------- auto-enter ----------
+if(localStorage.getItem('st_ok')==='1'&&token){gh('').then(enterApp).catch(()=>{localStorage.removeItem('st_ok');});}
+</script>
+</body>
+</html>
