@@ -11,52 +11,52 @@
 body{font-family:'Assistant',system-ui,sans-serif;background:var(--ink);color:var(--txt);min-height:100vh}
 button{font:inherit;cursor:pointer}
 #gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-.gate-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;max-width:430px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.gate-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;max-width:440px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .gate-card h1{font-size:22px;margin-bottom:6px;color:var(--gold)}
-.gate-card p{font-size:14px;color:var(--dim);margin-bottom:18px;line-height:1.6}
+.gate-card p{font-size:13.5px;color:var(--dim);margin-bottom:16px;line-height:1.7}
 .gate-card label{display:block;font-size:13px;color:var(--dim);margin:12px 0 5px}
 .gate-card input{width:100%;padding:11px 13px;border-radius:9px;border:1px solid var(--line);background:#141210;color:var(--txt);font-size:15px}
 .btn{display:inline-block;background:var(--gold);color:#161512;border:none;border-radius:9px;padding:11px 20px;font-weight:700;font-size:15px}
 .btn:disabled{opacity:.5;cursor:default}
-.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
-#gate .btn{width:100%;margin-top:20px}
+#gate .btn{width:100%;margin-top:18px}
 .err{color:#e08080;font-size:13px;margin-top:10px;min-height:18px}
 #app{display:none;flex-direction:column;height:100vh}
 #bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 12px;background:var(--panel);border-bottom:1px solid var(--line);z-index:10}
 #bar .ttl{font-weight:700;color:var(--gold);margin-left:6px;font-size:15px}
 #bar select,#bar button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:13.5px}
-#bar select:focus,#bar button:focus{outline:1px solid var(--gold)}
 #bar button.on{background:var(--gold);color:#161512;border-color:var(--gold);font-weight:700}
 #saveBtn{background:var(--gold);color:#161512;font-weight:700;border-color:var(--gold)}
 #wrap{flex:1;overflow:auto;display:flex;justify-content:center;background:#0c0b09;padding:14px}
 #stage{transition:width .25s;width:100%;height:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.55)}
 #stage.mob{width:390px}
 #view{width:100%;height:100%;border:0;background:#fff}
-#panel{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:var(--panel);border:1px solid var(--gold);border-radius:14px;padding:12px 16px;display:none;flex-wrap:wrap;align-items:center;gap:9px;max-width:94vw;box-shadow:0 16px 44px rgba(0,0,0,.6);z-index:30;font-size:13.5px}
+#panel{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:var(--panel);border:1px solid var(--gold);border-radius:14px;padding:10px 14px;display:none;flex-wrap:wrap;align-items:center;gap:8px;max-width:96vw;box-shadow:0 16px 44px rgba(0,0,0,.6);z-index:30;font-size:13px}
 #panel .tag{color:var(--gold);font-weight:700;font-size:13px}
-#panel button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px}
-#panel input[type=color]{width:34px;height:30px;border:1px solid var(--line);border-radius:6px;background:#2a2620;padding:2px}
+#panel button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12.5px}
+#panel select{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:12.5px}
+#panel input[type=color]{width:32px;height:28px;border:1px solid var(--line);border-radius:6px;background:#2a2620;padding:2px}
 #toast{position:fixed;top:64px;left:50%;transform:translateX(-50%);background:var(--gold);color:#161512;font-weight:700;padding:10px 20px;border-radius:10px;display:none;z-index:60;max-width:92vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 #toast.bad{background:#a33;color:#fff}
-#hist{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:18px}
-#hist .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;max-height:80vh;overflow:auto;padding:20px}
-#hist h2{font-size:17px;color:var(--gold);margin-bottom:4px}
-#hist .sub{font-size:12.5px;color:var(--dim);margin-bottom:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:18px}
+.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;max-height:80vh;overflow:auto;padding:20px}
+.modal h2{font-size:17px;color:var(--gold);margin-bottom:4px}
+.modal .sub{font-size:12.5px;color:var(--dim);margin-bottom:14px;line-height:1.6}
 .hrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
 .hrow .m{flex:1;line-height:1.45}
 .hrow .d{color:var(--dim);font-size:11.5px;white-space:nowrap}
 .hrow button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:12px;white-space:nowrap}
 #help{display:none;background:#2a2620;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8;color:var(--dim);margin:8px 12px 0}
+.pal{display:flex;flex-direction:column;gap:10px}
+.pal button{background:#2a2620;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:14.5px;text-align:right}
+.pal button b{color:var(--gold);display:block;margin-bottom:3px}
 </style>
 </head>
 <body>
 <div id="gate">
   <div class="gate-card">
     <h1>סטודיו עריכה</h1>
-    <p>עריכה חזותית של האתר החי. השינויים נשמרים ישירות במערכת ומתפרסמים לאתר תוך כדקה, עם היסטוריית גירסאות מלאה ושחזור בלחיצה.</p>
-    <label>סיסמת סטודיו</label>
-    <input id="inPass" type="password" autocomplete="off" placeholder="הסיסמה שקיבלת">
-    <label>מפתח גישה (GitHub token)</label>
+    <p>עריכה חזותית של האתר החי: לחיצה על כל אלמנט, עריכה במקום, והשינויים מתפרסמים לאתר תוך כדקה, עם היסטוריית גירסאות ושחזור מלא.<br>הדף עצמו גלוי לכל, אבל אי אפשר לכתוב דבר בלי מפתח הגישה הפרטי שלך (GitHub fine-grained token עם הרשאת Contents: Read &amp; write לרפוזיטורי בלבד). המפתח נשמר רק בזיכרון הלשונית הזו, נמחק בסגירתה, ונשלח אך ורק ל-GitHub.</p>
+    <label>מפתח גישה (github_pat_...)</label>
     <input id="inTok" type="password" autocomplete="off" placeholder="github_pat_...">
     <div class="err" id="gateErr"></div>
     <button class="btn" id="gateBtn">כניסה לסטודיו</button>
@@ -68,50 +68,75 @@ button{font:inherit;cursor:pointer}
     <select id="pageSel"></select>
     <button id="vpBtn" title="מעבר תצוגת נייד/דסקטופ">📱 נייד</button>
     <button id="editBtn">✏️ מצב עריכה</button>
+    <button id="addBtn">➕ הוסף בלוק</button>
     <button id="refBtn">↻ רענון</button>
     <button id="histBtn">🕘 היסטוריה ושחזור</button>
     <button id="helpBtn">؟ עזרה</button>
     <button id="saveBtn">💾 שמור ופרסם <span id="cnt"></span></button>
     <button id="outBtn">יציאה</button>
   </div>
-  <div id="help">• לוחצים על "מצב עריכה" ואז על כל אלמנט בעמוד: טקסט נערך ישירות במקום, תמונה מוחלפת מהלוח התחתון.<br>• אפשר גם לשנות צבע וגודל גופן, ולהסתיר אלמנטים. • "שמור ופרסם" מעלה את השינויים לאתר החי תוך כדקה. • כל שמירה נרשמת בהיסטוריה, ואפשר לשחזר כל גירסה קודמת בלחיצה.</div>
+  <div id="help">• "מצב עריכה" ואז לחיצה על כל אלמנט: טקסט נערך ישירות במקום. • מהלוח התחתון: צבע, גודל, גופן, שוליים וריפוד, הזזה למעלה/למטה, הסתרה, מחיקה, החלפת תמונה וקישור. • "הוסף בלוק" מכניס בלוק חדש אחרי האלמנט הנבחר. • "שמור ופרסם" מעלה לאתר החי תוך כדקה. • כל שמירה נשמרת בהיסטוריה ואפשר לשחזר כל גירסה. • סקריפטים ותוכן לא בטוח מוסרים אוטומטית בכל שמירה.</div>
   <div id="wrap"><div id="stage"><iframe id="view" title="תצוגת האתר"></iframe></div></div>
   <div id="panel"></div>
-  <div id="hist"><div class="box"><h2>היסטוריית גירסאות</h2><div class="sub">כל שמירה היא נקודת זמן. שחזור מחזיר את העמוד הנוכחי לגירסה שנבחרה (גם השחזור עצמו נשמר בהיסטוריה).</div><div id="hlist"></div><div style="text-align:left;margin-top:12px"><button class="btn-ghost btn" onclick="document.getElementById('hist').style.display='none'">סגור</button></div></div></div>
+  <div id="hist" class="modal"><div class="box"><h2>היסטוריית גירסאות</h2><div class="sub">שחזור מחזיר רק את העמוד הנוכחי לגירסה שנבחרה (ללא נגיעה בקבצי הסטודיו או בעמודים אחרים). אם נשמרו שינויים חדשים בזמן השחזור, הוא ייבטל ולא ידרוס אותם.</div><div id="hlist"></div><div style="text-align:left;margin-top:12px"><button class="btn" onclick="document.getElementById('hist').style.display='none'">סגור</button></div></div></div>
+  <div id="palette" class="modal"><div class="box"><h2>הוספת בלוק</h2><div class="sub">הבלוק יתווסף אחרי האלמנט הנבחר (או בסוף העמוד אם לא נבחר אלמנט), ואפשר לערוך אותו מיד.</div><div class="pal">
+    <button data-tpl="text"><b>כותרת וטקסט</b>סקשן עם כותרת משנה ופסקה</button>
+    <button data-tpl="image"><b>תמונה</b>בלוק תמונה - לחיצה עליו תאפשר החלפה לקובץ שלך</button>
+    <button data-tpl="button"><b>כפתור קישור</b>כפתור בולט - ניתן לערוך טקסט וקישור</button>
+  </div><div style="text-align:left;margin-top:12px"><button class="btn" onclick="document.getElementById('palette').style.display='none'">ביטול</button></div></div></div>
 </div>
 <div id="toast"></div>
 <script>
 'use strict';
-const CFG={owner:'orws88gold',repo:'tno-ai',branch:'main',pass:'e7ab4059dd91a268f8b2cfff5853df0b4d3b15104c19a643e32878ae11d330f5'};
+const CFG={owner:'orws88gold',repo:'tno-ai',branch:'main'};
 const API='https://api.github.com';
 const $=id=>document.getElementById(id);
-let token=localStorage.getItem('st_tok')||'';
-let editMode=false, sel=null, selPath='', busy=false;
-let pending={};   // page -> { selectorPath: {html?, style?{}, src?, upload?{path,b64,done}} }
-let originals={}; // page -> { selectorPath: {html, styleAttr, src} }
+let token=sessionStorage.getItem('st_tok')||'';
+let editMode=false, sel=null, selPath='', busy=false, newId=0;
+let ops={}; // page -> ordered op list
 const TEXT_TAGS=['H1','H2','H3','H4','H5','H6','P','SPAN','A','LI','BUTTON','STRONG','EM','SMALL','FIGCAPTION','DT','DD','LABEL','TD','TH','BLOCKQUOTE'];
 function toast(m,bad){const t=$('toast');t.textContent=m;t.className=bad?'bad':'';t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',bad?9000:5000);}
-async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
 function b64e(s){return btoa(unescape(encodeURIComponent(s)));}
 function b64d(s){return decodeURIComponent(escape(atob(s.replace(/\s/g,''))));}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 async function gh(path,opts){opts=opts||{};const r=await fetch(API+'/repos/'+CFG.owner+'/'+CFG.repo+path,{method:opts.method||'GET',body:opts.body,headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}});if(!r.ok){let t='';try{t=await r.text();}catch(e){}throw new Error('GitHub '+r.status+': '+t.slice(0,220));}return r.json();}
+// ---------- sanitization (save-time, applies to any user-provided HTML/URL) ----------
+function sanitize(html){
+  const d=document.implementation.createHTMLDocument('x');
+  d.body.innerHTML=String(html);
+  d.querySelectorAll('script,iframe,object,embed,form,link,meta,base,style,audio,video,source,svg,math').forEach(n=>n.remove());
+  d.querySelectorAll('*').forEach(n=>{
+    [...n.attributes].forEach(a=>{
+      const nm=a.name.toLowerCase(), v=a.value.replace(/\s/g,'').toLowerCase();
+      if(nm.startsWith('on')||nm==='srcset'){n.removeAttribute(a.name);return;}
+      if((nm==='href'||nm==='src'||nm==='xlink:href'||nm==='action'||nm==='formaction')&&(v.startsWith('javascript:')||v.startsWith('vbscript:')||v.startsWith('data:text/html')))n.removeAttribute(a.name);
+      if(nm==='style'&&/expression\s*\(|javascript:/i.test(a.value))n.removeAttribute(a.name);
+    });
+  });
+  return d.body.innerHTML;
+}
+function safeUrl(u,img){
+  const v=String(u||'').trim(), lv=v.replace(/\s/g,'').toLowerCase();
+  if(lv.startsWith('javascript:')||lv.startsWith('vbscript:')||lv.startsWith('data:text/html'))return null;
+  if(lv.startsWith('data:')&&!(img&&lv.startsWith('data:image/')))return null;
+  return v;
+}
 // ---------- gate ----------
 async function tryEnter(){
-  const p=$('inPass').value.trim(), tk=$('inTok').value.trim();
+  const tk=$('inTok').value.trim();
   $('gateErr').textContent='';
-  if((await sha256(p))!==CFG.pass){$('gateErr').textContent='סיסמה שגויה';return;}
   if(tk)token=tk;
   if(!token){$('gateErr').textContent='נדרש מפתח גישה';return;}
   $('gateBtn').disabled=true;$('gateBtn').textContent='מתחבר...';
   try{await gh('');}
-  catch(e){$('gateErr').textContent='המפתח לא תקין או חסרה הרשאה (Contents: Read & write)';$('gateBtn').disabled=false;$('gateBtn').textContent='כניסה לסטודיו';return;}
-  localStorage.setItem('st_tok',token);localStorage.setItem('st_ok','1');
+  catch(e){$('gateErr').textContent='המפתח לא תקין או חסרה הרשאת Contents: Read & write לרפו';$('gateBtn').disabled=false;$('gateBtn').textContent='כניסה לסטודיו';return;}
+  sessionStorage.setItem('st_tok',token);
   enterApp();
 }
 function enterApp(){$('gate').style.display='none';$('app').style.display='flex';loadPages();}
 $('gateBtn').onclick=tryEnter;
 $('inTok').addEventListener('keydown',e=>{if(e.key==='Enter')tryEnter();});
-$('outBtn').onclick=()=>{localStorage.removeItem('st_tok');localStorage.removeItem('st_ok');location.reload();};
+$('outBtn').onclick=()=>{sessionStorage.removeItem('st_tok');location.reload();};
 // ---------- pages ----------
 async function loadPages(){
   let pages=['index.html'];
@@ -124,15 +149,67 @@ async function loadPages(){
 }
 function page(){return $('pageSel').value||'index.html';}
 function loadView(){deselect();$('view').src='/'+page()+'?st='+Date.now();}
-$('pageSel').onchange=loadView;
-$('refBtn').onclick=loadView;
-$('vpBtn').onclick=()=>{const s=$('stage');s.classList.toggle('mob');$('vpBtn').textContent=s.classList.contains('mob')?'🖥️ דסקטופ':'📱 נייד';};
+$('pageSel').onchange=()=>{ops[page()]=ops[page()]||[];loadView();};
+$('refBtn').onclick=()=>{loadView();pendingReplay();};
+$('vpBtn').onclick=()=>{const s=$('stage');s.classList.toggle('mob');$('vpBtn').textContent=s.classList.toggle?'':'';const m=s.classList.contains('mob');$('vpBtn').textContent=m?'🖥️ דסקטופ':'📱 נייד';};
 $('helpBtn').onclick=()=>{const h=$('help');h.style.display=h.style.display==='block'?'none':'block';};
+// ---------- ops ----------
+function oplist(p){ops[p]=ops[p]||[];return ops[p];}
+function pushOp(op){oplist(page()).push(op);updateCnt();}
+function upsertOp(t,p,fields){
+  const l=oplist(page());
+  const ex=l.find(o=>o.t===t&&o.p===p);
+  if(ex){Object.assign(ex,fields);}else{l.push(Object.assign({t:t,p:p},fields));}
+  updateCnt();
+}
+function updateCnt(){
+  let n=0;for(const p in ops)n+=ops[p].length;
+  const c=$('cnt');if(c)c.textContent=n?('('+n+')'):'';
+}
+// apply an ordered op list to a document (source parse at save-time, or live preview replay)
+function applyOps(doc,list){
+  let missed=0;
+  for(const op of list){
+    const el=doc.querySelector(op.p);
+    if(!el){missed++;continue;}
+    if(op.t==='html')el.innerHTML=sanitize(op.html);
+    else if(op.t==='style'){for(const k in op.style){if(op.style[k]==='')el.style.removeProperty(k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()));else el.style[k]=op.style[k];}}
+    else if(op.t==='img'){const u=safeUrl(op.src,true);if(u){el.setAttribute('src',u);el.removeAttribute('srcset');}}
+    else if(op.t==='attr'){const u=op.attr==='href'?safeUrl(op.val,false):op.val;if(u!==null)el.setAttribute(op.attr,u);}
+    else if(op.t==='remove'){el.remove();}
+    else if(op.t==='move'){
+      const par=el.parentElement;if(!par){missed++;continue;}
+      if(op.dir<0){const prev=el.previousElementSibling;if(prev)par.insertBefore(el,prev);}
+      else{const nxt=el.nextElementSibling;if(nxt)par.insertBefore(nxt,el);}
+    }
+    else if(op.t==='add'){
+      const tmp=doc.createElement('div');tmp.innerHTML=sanitize(op.html);
+      const node=tmp.firstElementChild;if(!node){missed++;continue;}
+      if(op.pos==='before'&&el.parentElement)el.parentElement.insertBefore(node,el);
+      else if(op.pos==='inside')el.appendChild(node);
+      else if(el.parentElement)el.parentElement.insertBefore(node,el.nextElementSibling);
+    }
+  }
+  // strip editing-session markers before anything is saved
+  doc.querySelectorAll('[data-st-id]').forEach(e=>e.removeAttribute('data-st-id'));
+  doc.querySelectorAll('.stNew').forEach(e=>e.classList.remove('stNew'));
+  return missed;
+}
+// replay pending ops onto the live preview (used after reload / revert)
+function pendingReplay(){
+  setTimeout(()=>{
+    const l=ops[page()]||[];
+    if(!l.length)return;
+    const d=idoc();if(!d||!d.body)return;
+    applyOps(d,l.map(o=>Object.assign({},o,{p:o.p})));
+    // re-apply needs data-st-id markers intact for further edits; re-tag new blocks
+  },700);
+}
 // ---------- edit mode ----------
 function iwin(){return $('view').contentWindow;}
 function idoc(){return $('view').contentDocument;}
 $('editBtn').onclick=()=>{editMode=!editMode;$('editBtn').classList.toggle('on',editMode);if(!editMode)deselect();toast(editMode?'מצב עריכה פעיל - לחץ על אלמנט בעמוד':'מצב עריכה כבוי');};
-$('view').addEventListener('load',()=>{setTimeout(inject,150);});
+$('view').addEventListener('load',()=>{setTimeout(()=>{inject();pendingReplay();},150);});
 function inject(){
   const d=idoc();if(!d||!d.body)return;
   if(!d.getElementById('st-css')){const st=d.createElement('style');st.id='st-css';
@@ -145,6 +222,7 @@ function inject(){
 function pathOf(el){
   const parts=[];
   while(el&&el.nodeType===1&&el.tagName!=='HTML'){
+    if(el.getAttribute&&el.getAttribute('data-st-id')){parts.unshift('[data-st-id="'+el.getAttribute('data-st-id')+'"]');break;}
     let p=el.tagName.toLowerCase();
     const par=el.parentElement;
     if(par){const sib=[...par.children].filter(c=>c.tagName===el.tagName);if(sib.length>1)p+=':nth-of-type('+(sib.indexOf(el)+1)+')';}
@@ -157,18 +235,12 @@ function isTextEl(el){
   if(el.tagName==='DIV'){for(const n of el.childNodes)if(n.nodeType===3&&n.textContent.trim())return true;}
   return false;
 }
-function snapshot(el){
-  const pg=page(),k=pathOf(el);
-  originals[pg]=originals[pg]||{};
-  if(!originals[pg][k])originals[pg][k]={html:el.innerHTML,styleAttr:el.getAttribute('style'),src:el.tagName==='IMG'?el.getAttribute('src'):null};
-}
 function pick(el){
   const W=iwin();
   if(!(el instanceof W.HTMLElement))return;
   if(el===el.ownerDocument.body||el===el.ownerDocument.documentElement)return;
   deselect();
   sel=el;selPath=pathOf(el);
-  snapshot(el);
   sel.classList.add(isTextEl(sel)?'stEdit':'stSel');
   if(isTextEl(sel)){
     sel.contentEditable='true';sel.focus();
@@ -177,43 +249,50 @@ function pick(el){
   }
   buildPanel();
 }
-function onTextInput(){
-  if(!sel)return;
-  const pg=page();pending[pg]=pending[pg]||{};
-  const e=pending[pg][selPath]||{};e.html=sel.innerHTML;pending[pg][selPath]=e;
-  updateCnt();
-}
+function onTextInput(){if(!sel)return;upsertOp('html',selPath,{html:sel.innerHTML});}
 function deselect(){
   if(sel){sel.classList.remove('stSel','stEdit');sel.removeEventListener('input',onTextInput);if(sel.contentEditable==='true')sel.contentEditable='false';}
   sel=null;selPath='';$('panel').style.display='none';
 }
-function rec(props){
-  const pg=page();pending[pg]=pending[pg]||{};
-  const e=pending[pg][selPath]||{};
-  Object.assign(e,props);
-  if(props.style)e.style=Object.assign(e.style||{},props.style);
-  pending[pg][selPath]=e;updateCnt();
+function recStyle(prop,val){
+  if(!sel)return;
+  if(val==='')sel.style.removeProperty(prop.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()));else sel.style[prop]=val;
+  const l=oplist(page());
+  const ex=l.find(o=>o.t==='style'&&o.p===selPath);
+  if(ex)ex.style[prop]=val;else{const st={};st[prop]=val;pushOp({t:'style',p:selPath,style:st});}
+  updateCnt();
 }
-function updateCnt(){
-  let n=0;for(const p in pending)n+=Object.keys(pending[p]).length;
-  const c=$('cnt');if(c)c.textContent=n?('('+n+')'):'';
-}
+// ---------- panel ----------
 function buildPanel(){
   const P=$('panel');if(!sel){P.style.display='none';return;}
-  const canText=isTextEl(sel),isImg=sel.tagName==='IMG';
-  let h='<span class="tag">&lt;'+sel.tagName.toLowerCase()+'&gt;</span>';
-  if(canText)h+='<span style="color:var(--dim)">עורכים ישירות בעמוד ✍️</span>';
+  const canText=isTextEl(sel),isImg=sel.tagName==='IMG',isA=sel.tagName==='A';
+  let h='<span class="tag">&lt;'+esc(sel.tagName.toLowerCase())+'&gt;</span>';
+  h+='<button id="pUp" title="הזז למעלה">⬆</button><button id="pDown" title="הזז למטה">⬇</button>';
   h+='<button id="pSizeM">א־</button><button id="pSizeP">א+</button>';
   h+='<input type="color" id="pColor" title="צבע טקסט">';
+  h+='<select id="pFont"><option value="">גופן</option><option value="Secular One">Secular One</option><option value="Heebo">Heebo</option><option value="Assistant">Assistant</option></select>';
+  h+='<button id="pMarP" title="שוליים חיצוניים +">ש+</button><button id="pMarM" title="שוליים חיצוניים -">ש־</button>';
+  h+='<button id="pPadP" title="ריפוד פנימי +">ר+</button><button id="pPadM" title="ריפוד פנימי -">ר־</button>';
   h+='<button id="pHide">🙈 הסתר</button>';
-  if(isImg)h+='<button id="pImgF">🖼️ החלף מקובץ</button><button id="pImgU">🔗 החלף מקישור</button>';
-  h+='<button id="pRevert">↩ בטל שינוי</button><button id="pClose">✕</button>';
+  if(isA)h+='<button id="pLink">🔗 קישור</button>';
+  if(isImg)h+='<button id="pImgF">🖼️ מקובץ</button><button id="pImgU">🔗 מקישור</button>';
+  h+='<button id="pDel" title="מחק אלמנט">🗑</button>';
+  h+='<button id="pRevert">↩ בטל שינויים לאלמנט</button><button id="pClose">✕</button>';
   P.innerHTML=h;P.style.display='flex';
+  $('pUp').onclick=()=>moveEl(-1);
+  $('pDown').onclick=()=>moveEl(1);
   $('pSizeM').onclick=()=>bumpSize(-1);
   $('pSizeP').onclick=()=>bumpSize(1);
-  $('pColor').oninput=e=>{sel.style.color=e.target.value;rec({style:{color:e.target.value}});};
-  $('pHide').onclick=()=>{const off=sel.style.display!=='none';sel.style.display=off?'none':'';rec({style:{display:off?'none':''}});$('pHide').textContent=off?'👁️ הצג':'🙈 הסתר';};
+  $('pColor').oninput=e=>recStyle('color',e.target.value);
+  $('pFont').onchange=e=>{if(e.target.value)recStyle('fontFamily',"'"+e.target.value+"',sans-serif");};
+  $('pMarP').onclick=()=>bumpBox('margin',8);
+  $('pMarM').onclick=()=>bumpBox('margin',-8);
+  $('pPadP').onclick=()=>bumpBox('padding',8);
+  $('pPadM').onclick=()=>bumpBox('padding',-8);
+  $('pHide').onclick=()=>{const off=sel.style.display!=='none';recStyle('display',off?'none':'');$('pHide').textContent=off?'👁️ הצג':'🙈 הסתר';};
+  if(isA)$('pLink').onclick=editLink;
   if(isImg){$('pImgF').onclick=pickFile;$('pImgU').onclick=pickUrl;}
+  $('pDel').onclick=removeEl;
   $('pRevert').onclick=revertEl;
   $('pClose').onclick=deselect;
 }
@@ -221,11 +300,52 @@ function bumpSize(d){
   if(!sel)return;
   const W=iwin();const cur=parseFloat(sel.dataset.stSize||W.getComputedStyle(sel).fontSize);
   const nx=Math.max(9,cur+d*1.5);sel.dataset.stSize=nx;
-  sel.style.fontSize=nx+'px';rec({style:{fontSize:nx+'px'}});
+  recStyle('fontSize',nx+'px');
+}
+function bumpBox(prop,d){
+  if(!sel)return;
+  const W=iwin();const key='st'+prop;
+  const cur=parseFloat(sel.dataset[key]||W.getComputedStyle(sel)[prop]);
+  const nx=Math.max(0,cur+d);sel.dataset[key]=nx;
+  recStyle(prop,nx+'px');
+}
+function moveEl(dir){
+  if(!sel)return;
+  const par=sel.parentElement;if(!par)return;
+  if(dir<0){const prev=sel.previousElementSibling;if(!prev){toast('כבר בראש');return;}par.insertBefore(sel,prev);}
+  else{const nxt=sel.nextElementSibling;if(!nxt){toast('כבר בסוף');return;}par.insertBefore(nxt,sel);}
+  pushOp({t:'move',p:selPath,dir:dir});
+  toast('הוזז - ישמר בפרסום');
+}
+function removeEl(){
+  if(!sel)return;
+  if(!confirm('למחוק את האלמנט? (ייכנס לתוקף בשמירה; ניתן לשחזר מההיסטוריה)'))return;
+  const p=selPath;
+  sel.remove();deselect();
+  pushOp({t:'remove',p:p});
+}
+function revertEl(){
+  if(!sel)return;
+  const p=selPath,pg=page();
+  ops[pg]=(ops[pg]||[]).filter(o=>o.p!==p);
+  updateCnt();deselect();
+  loadView(); // replay of remaining ops happens on load
+  toast('שינויי האלמנט בוטלו');
+}
+function editLink(){
+  const u=prompt('קישור יעד (כולל https://):',sel.getAttribute('href')||'https://');
+  if(!u)return;
+  const safe=safeUrl(u,false);
+  if(!safe){toast('קישור לא תקין',true);return;}
+  sel.setAttribute('href',safe);
+  upsertOp('attr',selPath,{attr:'href',val:safe});
 }
 function pickUrl(){
   const u=prompt('הדבק קישור לתמונה:');if(!u)return;
-  sel.src=u;rec({src:u});
+  const safe=safeUrl(u,true);
+  if(!safe){toast('קישור לא תקין',true);return;}
+  sel.src=safe;
+  upsertOp('img',selPath,{src:safe});
 }
 function pickFile(){
   const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
@@ -237,61 +357,73 @@ function pickFile(){
       const b64=rd.result.split(',')[1];
       const safe='assets/img/studio-'+Date.now()+'-'+f.name.replace(/[^\w.\-]/g,'_');
       sel.src=rd.result;
-      rec({src:safe,upload:{path:safe,b64:b64,done:false}});
+      upsertOp('img',selPath,{src:safe,upload:{path:safe,b64:b64,done:false}});
       toast('התמונה תועלה בשמירה הבאה');
     };
     rd.readAsDataURL(f);
   };
   inp.click();
 }
-function revertEl(){
-  const pg=page(),o=(originals[pg]||{})[selPath];
-  if(o){sel.innerHTML=o.html;if(o.styleAttr===null)sel.removeAttribute('style');else sel.setAttribute('style',o.styleAttr);if(o.src!==null&&sel.tagName==='IMG')sel.src=o.src;}
-  if(pending[pg]){delete pending[pg][selPath];if(!Object.keys(pending[pg]).length)delete pending[pg];}
-  updateCnt();deselect();toast('השינוי בוטל');
-}
-async function putFile(path,contentB64,message){
+// ---------- add block ----------
+const TPLS={
+  text:'<section class="stNew" style="padding:70px 22px;max-width:820px;margin:0 auto"><h2>כותרת חדשה</h2><p style="margin-top:14px;line-height:1.8">טקסט חדש. לחצו עליי כדי לערוך.</p></section>',
+  image:'<section class="stNew" style="padding:60px 22px;max-width:900px;margin:0 auto;text-align:center"><img alt="תמונה חדשה" style="max-width:100%;border-radius:14px" src="data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\'><rect width=\'100%\' height=\'100%\' fill=\'%23ddd6c8\'/><text x=\'50%\' y=\'50%\' font-size=\'28\' fill=\'%23877\' text-anchor=\'middle\'>לחצו עליי להחלפת תמונה</text></svg>"></section>',
+  button:'<section class="stNew" style="padding:50px 22px;text-align:center"><a href="https://wa.me/972545696422" style="display:inline-block;background:#b98a2f;color:#161512;font-weight:700;padding:14px 34px;border-radius:999px;text-decoration:none">טקסט כפתור</a></section>'
+};
+$('addBtn').onclick=()=>{if(!editMode){toast('הפעל קודם "מצב עריכה"');return;}$('palette').style.display='flex';};
+document.querySelectorAll('.pal button[data-tpl]').forEach(b=>b.onclick=()=>{
+  $('palette').style.display='none';
+  const d=idoc();if(!d||!d.body)return;
+  newId++;
+  const html=TPLS[b.dataset.tpl].replace('class="stNew"','class="stNew" data-st-id="n'+newId+'"');
+  const anchor=sel&&sel.ownerDocument===d?sel:null;
+  const anchorPath=anchor?selPath:'body';
+  const tmp=d.createElement('div');tmp.innerHTML=html;
+  const node=tmp.firstElementChild;
+  if(anchor&&anchor.parentElement)anchor.parentElement.insertBefore(node,anchor.nextElementSibling);
+  else d.body.appendChild(node);
+  pushOp({t:'add',p:anchorPath,pos:anchor?'after':'inside',html:html});
+  deselect();
+  toast('בלוק נוסף - לחץ עליו לעריכה, וישמר בפרסום');
+});
+// ---------- save (commit-pinned, conflict-safe) ----------
+async function putFile(path,contentB64,message,headAtStart){
   for(let a=0;a<4;a++){
     const cur=await gh('/contents/'+path+'?ref='+encodeURIComponent(CFG.branch));
     try{
       return await gh('/contents/'+path,{method:'PUT',body:JSON.stringify({message:message,content:contentB64,sha:cur.sha,branch:CFG.branch})});
     }catch(e){
-      if(a<3&&/409/.test(e.message)){await new Promise(r=>setTimeout(r,2500));continue;}
+      if(/409/.test(e.message)&&a<3){
+        const br=await gh('/branches/'+encodeURIComponent(CFG.branch));
+        if(br.commit.sha===headAtStart){await new Promise(r=>setTimeout(r,2500));continue;}
+        throw new Error('נשמרו שינויים חדשים באתר בזמן הפעולה - בוטל כדי לא לדרוס אותם. רענן ונסה שוב.');
+      }
       throw e;
     }
   }
 }
-// ---------- save ----------
 $('saveBtn').onclick=async()=>{
   if(busy)return;
-  const pages=Object.keys(pending).filter(p=>Object.keys(pending[p]).length);
+  const pages=Object.keys(ops).filter(p=>(ops[p]||[]).length);
   if(!pages.length){toast('אין שינויים לשמירה');return;}
   busy=true;$('saveBtn').disabled=true;$('saveBtn').textContent='שומר...';
   try{
-    for(const p of pages)for(const k of Object.keys(pending[p])){
-      const e=pending[p][k];
-      if(e.upload&&!e.upload.done){
-        await gh('/contents/'+e.upload.path,{method:'PUT',body:JSON.stringify({message:'העלאת תמונה מהסטודיו: '+e.upload.path,content:e.upload.b64,branch:CFG.branch})});
-        e.upload.done=true;
+    const head=(await gh('/branches/'+encodeURIComponent(CFG.branch))).commit.sha;
+    for(const p of pages)for(const o of ops[p]){
+      if(o.upload&&!o.upload.done){
+        await gh('/contents/'+o.upload.path,{method:'PUT',body:JSON.stringify({message:'העלאת תמונה מהסטודיו: '+o.upload.path,content:o.upload.b64,branch:CFG.branch})});
+        o.upload.done=true;
       }
     }
     for(const p of pages){
       const cur=await gh('/contents/'+p+'?ref='+encodeURIComponent(CFG.branch));
       const raw=b64d(cur.content);
       const doc=new DOMParser().parseFromString(raw,'text/html');
-      let applied=0,missed=0;
-      for(const k of Object.keys(pending[p])){
-        const el=doc.querySelector(k);if(!el){missed++;continue;}
-        const e=pending[p][k];
-        if(e.html!==undefined)el.innerHTML=e.html;
-        if(e.src!==undefined){el.setAttribute('src',e.src);if(el.hasAttribute('srcset'))el.removeAttribute('srcset');}
-        if(e.style)for(const prop in e.style){if(e.style[prop]==='')el.style.removeProperty(prop.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()));else el.style[prop]=e.style[prop];}
-        applied++;
-      }
+      const missed=applyOps(doc,ops[p]);
       const out='<!DOCTYPE html>\n'+doc.documentElement.outerHTML;
-      await putFile(p,b64e(out),'עריכה חזותית מהסטודיו ('+applied+' שינויים ב-'+p+')');
-      if(missed)toast('שים לב: '+missed+' אלמנטים לא נמצאו ולא נשמרו',true);
-      delete pending[p];delete originals[p];
+      await putFile(p,b64e(out),'עריכה חזותית מהסטודיו ('+ops[p].length+' פעולות ב-'+p+')',head);
+      if(missed)toast('שים לב: '+missed+' פעולות לא מצאו את האלמנט ולא נשמרו',true);
+      ops[p]=[];
     }
     updateCnt();deselect();
     toast('נשמר בהצלחה! האתר החי מתעדכן תוך כדקה ✓');
@@ -299,7 +431,7 @@ $('saveBtn').onclick=async()=>{
   }catch(err){toast('שגיאה בשמירה: '+err.message,true);}
   busy=false;$('saveBtn').disabled=false;$('saveBtn').innerHTML='💾 שמור ופרסם <span id="cnt"></span>';updateCnt();
 };
-// ---------- history ----------
+// ---------- history / restore ----------
 $('histBtn').onclick=async()=>{
   $('hist').style.display='flex';$('hlist').innerHTML='טוען...';
   try{
@@ -311,19 +443,21 @@ $('histBtn').onclick=async()=>{
     $('hlist').querySelectorAll('button').forEach(b=>b.onclick=()=>restore(b.dataset.sha,b.dataset.d));
   }catch(e){$('hlist').innerHTML='שגיאה: '+esc(e.message);}
 };
-function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 async function restore(sha,dateStr){
-  if(!confirm('לשחזר את '+page()+' לגירסה מ-'+dateStr+'?\nהמצב הנוכחי נשמר בהיסטוריה.'))return;
+  const pg=page();
+  if(pg==='studio.html'){toast('לא ניתן לשחזר את קובץ הסטודיו',true);return;}
+  if(!confirm('לשחזר רק את '+pg+' לגירסה מ-'+dateStr+'?\nשאר הקבצים (כולל הסטודיו) לא ישתנו. המצב הנוכחי נשמר בהיסטוריה.'))return;
   try{
-    const old=await gh('/contents/'+page()+'?ref='+sha);
-    await putFile(page(),b64e(b64d(old.content)),'שחזור '+page()+' לגירסה מ-'+dateStr);
+    const head=(await gh('/branches/'+encodeURIComponent(CFG.branch))).commit.sha;
+    const old=await gh('/contents/'+pg+'?ref='+sha);
+    await putFile(pg,b64e(b64d(old.content)),'שחזור '+pg+' לגירסה מ-'+dateStr,head);
     $('hist').style.display='none';
     toast('שוחזר! האתר מתעדכן תוך כדקה ✓');
     setTimeout(loadView,25000);
   }catch(e){toast('שגיאה בשחזור: '+e.message,true);}
 }
-// ---------- auto-enter ----------
-if(localStorage.getItem('st_ok')==='1'&&token){gh('').then(enterApp).catch(()=>{localStorage.removeItem('st_ok');});}
+// ---------- auto-enter (tab-session only) ----------
+if(token){gh('').then(enterApp).catch(()=>{sessionStorage.removeItem('st_tok');});}
 </script>
 </body>
 </html>
