@@ -250,6 +250,17 @@ function revertEl(){
   if(pending[pg]){delete pending[pg][selPath];if(!Object.keys(pending[pg]).length)delete pending[pg];}
   updateCnt();deselect();toast('השינוי בוטל');
 }
+async function putFile(path,contentB64,message){
+  for(let a=0;a<4;a++){
+    const cur=await gh('/contents/'+path+'?ref='+encodeURIComponent(CFG.branch));
+    try{
+      return await gh('/contents/'+path,{method:'PUT',body:JSON.stringify({message:message,content:contentB64,sha:cur.sha,branch:CFG.branch})});
+    }catch(e){
+      if(a<3&&/409/.test(e.message)){await new Promise(r=>setTimeout(r,2500));continue;}
+      throw e;
+    }
+  }
+}
 // ---------- save ----------
 $('saveBtn').onclick=async()=>{
   if(busy)return;
@@ -278,7 +289,7 @@ $('saveBtn').onclick=async()=>{
         applied++;
       }
       const out='<!DOCTYPE html>\n'+doc.documentElement.outerHTML;
-      await gh('/contents/'+p,{method:'PUT',body:JSON.stringify({message:'עריכה חזותית מהסטודיו ('+applied+' שינויים ב-'+p+')',content:b64e(out),sha:cur.sha,branch:CFG.branch})});
+      await putFile(p,b64e(out),'עריכה חזותית מהסטודיו ('+applied+' שינויים ב-'+p+')');
       if(missed)toast('שים לב: '+missed+' אלמנטים לא נמצאו ולא נשמרו',true);
       delete pending[p];delete originals[p];
     }
@@ -305,8 +316,7 @@ async function restore(sha,dateStr){
   if(!confirm('לשחזר את '+page()+' לגירסה מ-'+dateStr+'?\nהמצב הנוכחי נשמר בהיסטוריה.'))return;
   try{
     const old=await gh('/contents/'+page()+'?ref='+sha);
-    const cur=await gh('/contents/'+page()+'?ref='+encodeURIComponent(CFG.branch));
-    await gh('/contents/'+page(),{method:'PUT',body:JSON.stringify({message:'שחזור '+page()+' לגירסה מ-'+dateStr,content:b64e(b64d(old.content)),sha:cur.sha,branch:CFG.branch})});
+    await putFile(page(),b64e(b64d(old.content)),'שחזור '+page()+' לגירסה מ-'+dateStr);
     $('hist').style.display='none';
     toast('שוחזר! האתר מתעדכן תוך כדקה ✓');
     setTimeout(loadView,25000);
