@@ -133,7 +133,8 @@ bdi, .ltr { direction: ltr; unicode-bidi: isolate; }
 body, .site { font-weight: 400; }
 .mono { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--accent-ring, #B08A2E); border-radius: 50%; font-family: 'Secular One', sans-serif; font-size: 17px; color: var(--accent-ring, #B08A2E); margin-left: 12px; flex: none; }
 .brand-side { display: flex; align-items: center; }
-.phonepill { display: inline-block; border: 1px solid var(--accent-ring, #B08A2E); color: var(--accent-ring, #B08A2E); border-radius: 999px; padding: 8px 20px; font-size: 14px; font-weight: 600; text-decoration: none; margin-right: 28px; }
+.brand-side { gap: 28px; }
+.phonepill { display: inline-block; border: 1px solid var(--accent-ring, #B08A2E); color: var(--accent-ring, #B08A2E); border-radius: 999px; padding: 8px 20px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .hero h1 { text-wrap: balance; }
 .hero .hook, .hook { font-family: 'Assistant', 'Heebo', sans-serif; font-weight: 600; }
 .sec-hook { font-family: 'Assistant', 'Heebo', sans-serif; font-weight: 600; }
