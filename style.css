@@ -109,3 +109,10 @@ body { background: var(--cream); }
 @font-face { font-family: "Heebo"; src: url(./assets/fonts/f6.woff2) format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
 @font-face { font-family: "Assistant"; src: url(./assets/fonts/as-heb.woff2) format("woff2"); font-weight: 200 800; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
 @font-face { font-family: "Assistant"; src: url(./assets/fonts/as-lat.woff2) format("woff2"); font-weight: 200 800; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+
+/* contrast pass: darker amber on light backgrounds (>=4.5:1) */
+.kicker { color: #8A5A00; }
+.kicker::before { background: #8A5A00; }
+.hero .kicker, .examples .kicker, .contact .kicker { color: #F5A524; }
+.hero .kicker::before, .examples .kicker::before, .contact .kicker::before { background: #F5A524; }
+.sec-hook, .step .num { color: #8A5A00; }
