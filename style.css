@@ -105,3 +105,40 @@ body { background: #ffffff; }
 @media (max-width: 900px) {
   .hero > .reveal:first-child { padding-right: 20px; padding-left: 6px; }
 }
+
+@font-face { font-family: "Karantina"; src: url(./assets/fonts/k-heb-300.woff2) format("woff2"); font-weight: 300; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Karantina"; src: url(./assets/fonts/k-lat-300.woff2) format("woff2"); font-weight: 300; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: "Karantina"; src: url(./assets/fonts/k-heb-700.woff2) format("woff2"); font-weight: 700; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Karantina"; src: url(./assets/fonts/k-lat-700.woff2) format("woff2"); font-weight: 700; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: "Assistant"; src: url(./assets/fonts/as-heb.woff2) format("woff2"); font-weight: 200 800; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Assistant"; src: url(./assets/fonts/as-lat.woff2) format("woff2"); font-weight: 200 800; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+
+/* typography upgrade: Karantina display + Assistant body */
+.site { font-family: 'Assistant', 'Heebo', system-ui, sans-serif; font-weight: 300; }
+.brand, .hero h1, .sec-head h2, .step h3, .ex-card h3, .neutral h2, .contact h2, .member h2, .rowi h3, .price-line, .step .num, .rowi .num, .statline strong, .scan-box h4 {
+  font-family: 'Karantina', 'Frank Ruhl Libre', serif; font-weight: 700;
+}
+.brand { font-size: 30px; letter-spacing: .01em; }
+.hero h1 { font-size: 86px; line-height: 1.04; letter-spacing: 0; margin: 18px 0 24px; }
+.sec-head h2 { font-size: 58px; line-height: 1.05; }
+.step h3, .rowi h3 { font-size: 34px; }
+.ex-card h3 { font-size: 32px; }
+.neutral h2 { font-size: 60px; line-height: 1.06; }
+.contact h2 { font-size: 62px; line-height: 1.05; }
+.member h2 { font-size: 62px; line-height: 1.06; }
+.price-line { font-size: 100px; }
+.step .num { font-size: 60px; }
+.rowi .num { font-size: 26px; }
+.statline strong { font-size: 32px; }
+.scan-box h4 { font-size: 30px; }
+@media (max-width: 900px) {
+  .hero h1 { font-size: 54px; }
+  .sec-head h2 { font-size: 42px; }
+  .neutral h2 { font-size: 42px; }
+  .contact h2 { font-size: 44px; }
+  .member h2 { font-size: 44px; }
+  .price-line { font-size: 72px; }
+  .step .num { font-size: 44px; }
+  .step h3, .rowi h3 { font-size: 28px; }
+  .ex-card h3 { font-size: 28px; }
+}
