@@ -168,3 +168,8 @@ body, .site { font-weight: 400; }
   .hero-photo-m .hero-photo img { height: 380px; }
   .hero-photo-m .photo-cap { margin-top: 16px; }
 }
+
+/* caption on light mobile background */
+@media (max-width: 900px) {
+  .hero-photo-m .photo-cap { color: #14181A; background: #FFFFFF; border-color: rgba(138,90,0,.45); font-weight: 500; }
+}
