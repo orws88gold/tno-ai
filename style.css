@@ -10,10 +10,10 @@ body { background: var(--cream); }
 .site {
   width: 100vw; position: relative; left: 50%; transform: translateX(-50%);
   direction: rtl; background: var(--cream); color: var(--ink);
-  font-family: 'Assistant', 'Heebo', system-ui, sans-serif; font-weight: 300;
+  font-family: 'Assistant', 'Heebo', system-ui, sans-serif; font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
-.brand, h1, h2, h3, .hook, .step .num, .sec-hook { font-family: 'Frank Ruhl Libre', 'David Libre', serif; }
+.brand, h1, h2, h3, .step .num { font-family: 'Secular One', 'Assistant', sans-serif; font-weight: 400; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
 .kicker { font-size: 12px; letter-spacing: .28em; color: var(--amber); font-weight: 600; text-transform: uppercase; }
 .kicker::before { content: ''; display: inline-block; width: 26px; height: 1px; background: var(--amber); vertical-align: middle; margin-left: 10px; }
@@ -121,6 +121,34 @@ body { background: var(--cream); }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-row { padding: 30px 12px; border-bottom: 1px solid var(--line); transition: background .3s; }
 .faq-row:hover { background: rgba(245,165,36,.06); }
-.faq-row h3 { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 24px; margin: 0 0 10px; color: var(--ink); }
+.faq-row h3 { font-family: 'Secular One', 'Assistant', sans-serif; font-weight: 700; font-size: 24px; margin: 0 0 10px; color: var(--ink); }
 .faq-row p { margin: 0; font-size: 15.5px; line-height: 1.85; color: var(--muted); max-width: 75ch; }
 @media (max-width: 900px) { .faq-row { padding: 24px 4px; } }
+
+@font-face { font-family: "Secular One"; src: url(./assets/fonts/sec-heb.woff2) format("woff2"); font-weight: 400; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Secular One"; src: url(./assets/fonts/sec-lat.woff2) format("woff2"); font-weight: 400; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+
+/* typography direction v4: Secular One display + Assistant 400 body */
+bdi, .ltr { direction: ltr; unicode-bidi: isolate; }
+body, .site { font-weight: 400; }
+.mono { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--accent-ring, #B08A2E); border-radius: 50%; font-family: 'Secular One', sans-serif; font-size: 17px; color: var(--accent-ring, #B08A2E); margin-left: 12px; flex: none; }
+.brand-side { display: flex; align-items: center; }
+.phonepill { display: inline-block; border: 1px solid var(--accent-ring, #B08A2E); color: var(--accent-ring, #B08A2E); border-radius: 999px; padding: 8px 20px; font-size: 14px; font-weight: 600; text-decoration: none; margin-right: 28px; }
+.hero h1 { text-wrap: balance; }
+.hero .hook, .hook { font-family: 'Assistant', 'Heebo', sans-serif; font-weight: 600; }
+.sec-hook { font-family: 'Assistant', 'Heebo', sans-serif; font-weight: 600; }
+.photo-cap { font-family: 'Assistant', 'Heebo', sans-serif; font-weight: 500; font-size: 15px; line-height: 1.7; letter-spacing: 0; text-align: center; padding: 14px 22px; border: 1px solid var(--cap-line, rgba(176,138,46,.35)); border-radius: 12px; background: var(--cap-bg, rgba(255,255,255,.05)); }
+.btn-wa { border: 1.5px solid var(--btn-accent, #B08A2E); color: var(--btn-wa-color, #FAF8F2); padding: 14px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .3s; }
+.btn-wa:hover { background: var(--btn-wa-hover, rgba(176,138,46,.15)); }
+:root { --accent-ring: #F5A524; --btn-accent: #F5A524; }
+
+.step .num { color: rgba(245,165,36,.32); }
+.hero .lede { font-size: 18px; }
+.step p { font-size: 16.5px; }
+.next-head { margin: 44px 0 0; }
+.next-head h2 { font-family: 'Secular One', sans-serif; font-weight: 400; font-size: 40px; line-height: 1.2; color: #FAF8F2; margin: 0; }
+.next-head .sec-hook { color: var(--amber-soft); font-size: 18px; margin: 10px 0 0; }
+.photo-cap { --cap-line: rgba(245,165,36,.4); --cap-bg: rgba(255,255,255,.06); color: #E7E2D2; }
+.btn-main { padding: 16px 40px; font-size: 16px; }
+.btn-wa { --btn-accent: #F5A524; --btn-wa-hover: rgba(245,165,36,.15); }
+@media (max-width: 900px) { .next-head h2 { font-size: 30px; } .phonepill { display: none; } }
