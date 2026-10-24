@@ -116,3 +116,11 @@ body { background: var(--cream); }
 .hero .kicker, .examples .kicker, .contact .kicker { color: #F5A524; }
 .hero .kicker::before, .examples .kicker::before, .contact .kicker::before { background: #F5A524; }
 .sec-hook, .step .num { color: #8A5A00; }
+
+/* faq */
+.faq-list { border-top: 1px solid var(--line); }
+.faq-row { padding: 30px 12px; border-bottom: 1px solid var(--line); transition: background .3s; }
+.faq-row:hover { background: rgba(245,165,36,.06); }
+.faq-row h3 { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 24px; margin: 0 0 10px; color: var(--ink); }
+.faq-row p { margin: 0; font-size: 15.5px; line-height: 1.85; color: var(--muted); max-width: 75ch; }
+@media (max-width: 900px) { .faq-row { padding: 24px 4px; } }
