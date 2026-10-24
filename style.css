@@ -1,0 +1,101 @@
+html, body, #root { margin: 0; min-height: 100%; }
+body { background: #ffffff; }
+* { box-sizing: border-box; }
+.site {
+  width: 100vw; position: relative; left: 50%; transform: translateX(-50%);
+  direction: rtl; background: #fbfaf7; color: #14181a;
+  font-family: 'Heebo', system-ui, sans-serif; font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'Frank Ruhl Libre', 'David Libre', serif; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+.kicker { font-size: 12px; letter-spacing: .28em; color: #0d6b4f; font-weight: 500; text-transform: uppercase; }
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.on { opacity: 1; transform: none; }
+
+.topbar { display: flex; justify-content: space-between; align-items: baseline; padding: 34px 0 22px; border-bottom: 1px solid #e4e1d8; }
+.brand { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 20px; }
+.brand em { font-style: normal; color: #0d6b4f; }
+.topnav { display: flex; gap: 34px; font-size: 14px; color: #5c6663; }
+.topnav a { color: inherit; text-decoration: none; }
+
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; padding: 88px 0 90px; }
+.hero h1 { font-family: 'Frank Ruhl Libre', serif; font-weight: 900; font-size: 52px; line-height: 1.2; margin: 22px 0 26px; }
+.hero h1 em { font-style: normal; color: #0d6b4f; }
+.hero p.lede { font-size: 18px; line-height: 1.9; color: #45514d; max-width: 46ch; margin: 0 0 40px; }
+.cta-row { display: flex; gap: 30px; align-items: center; }
+.btn-main { background: #0d6b4f; color: #fff; padding: 15px 34px; border-radius: 999px; font-size: 15px; font-weight: 400; text-decoration: none; transition: background .3s; }
+.btn-main:hover { background: #14181a; }
+.btn-text { font-size: 15px; color: #14181a; text-decoration: none; border-bottom: 1px solid #0d6b4f; padding-bottom: 3px; }
+.hero-photo { position: relative; }
+.hero-photo img { width: 100%; height: 540px; object-fit: cover; display: block; border-radius: 2px; }
+.photo-cap { font-size: 12.5px; color: #8a938e; margin-top: 18px; letter-spacing: .04em; }
+
+.section { padding: 96px 0; }
+.sec-head { margin-bottom: 56px; }
+.sec-head h2 { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 36px; margin: 14px 0 0; }
+
+.steps { border-top: 1px solid #e4e1d8; }
+.step { display: grid; grid-template-columns: 110px 1fr 1.3fr; gap: 30px; align-items: baseline; padding: 40px 0; border-bottom: 1px solid #e4e1d8; }
+.step .num { font-family: 'Frank Ruhl Libre', serif; font-weight: 900; font-size: 44px; color: #0d6b4f; opacity: .85; }
+.step h3 { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 24px; margin: 0; }
+.step p { margin: 0; font-size: 15.5px; line-height: 1.85; color: #45514d; }
+
+.examples { background: #f0ede5; }
+.ex-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.ex-card { background: #fbfaf7; border: 1px solid #e0dcd0; padding: 36px 30px; }
+.ex-card .tag { font-size: 11.5px; letter-spacing: .2em; color: #0d6b4f; font-weight: 500; }
+.ex-card h3 { font-family: 'Frank Ruhl Libre', serif; font-size: 22px; margin: 14px 0 12px; }
+.ex-card p { font-size: 14.5px; line-height: 1.8; color: #45514d; margin: 0; }
+.ex-note { margin-top: 34px; font-size: 14px; color: #6b756f; border-right: 3px solid #0d6b4f; padding-right: 18px; max-width: 60ch; line-height: 1.8; }
+
+.neutral { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.neutral h2 { font-family: 'Frank Ruhl Libre', serif; font-weight: 900; font-size: 38px; line-height: 1.3; margin: 16px 0 22px; }
+.neutral p { font-size: 16.5px; line-height: 1.9; color: #45514d; }
+.neutral img { width: 100%; height: 420px; object-fit: cover; border-radius: 2px; }
+
+.contact { background: #14181a; color: #fbfaf7; padding: 96px 0; text-align: center; }
+.contact .kicker { color: #57b894; }
+.contact h2 { font-family: 'Frank Ruhl Libre', serif; font-weight: 900; font-size: 42px; margin: 18px 0 34px; }
+.contact .btn-main { background: #57b894; color: #14181a; }
+.contact .btn-text { color: #fbfaf7; border-color: #57b894; }
+.footer { padding: 36px 0; font-size: 13px; color: #8a938e; display: flex; justify-content: space-between; }
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 22px; }
+  .hero { grid-template-columns: 1fr; gap: 44px; padding: 56px 0 60px; }
+  .hero h1 { font-size: 36px; }
+  .hero-photo img { height: 340px; }
+  .step { grid-template-columns: 60px 1fr; }
+  .step p { grid-column: 2; }
+  .step .num { font-size: 32px; }
+  .ex-grid { grid-template-columns: 1fr; }
+  .neutral { grid-template-columns: 1fr; gap: 40px; }
+  .topnav { display: none; }
+  .section { padding: 60px 0; }
+}
+
+@font-face { font-family: "Frank Ruhl Libre"; src: url(./assets/fonts/f1.woff2) format("woff2"); font-weight: 300 900; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Frank Ruhl Libre"; src: url(./assets/fonts/f3.woff2) format("woff2"); font-weight: 300 900; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: "Heebo"; src: url(./assets/fonts/f2.woff2) format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+@font-face { font-family: "Heebo"; src: url(./assets/fonts/f6.woff2) format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+
+
+/* correction round: color, depth, alignment */
+.brand { direction: ltr; unicode-bidi: isolate; }
+.hero { background: radial-gradient(70% 90% at 88% 8%, rgba(13,107,79,.10), rgba(13,107,79,0)); }
+.btn-main { box-shadow: 0 8px 24px rgba(13,107,79,.25); }
+.principles { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.principles span { border: 1px solid #0d6b4f; color: #0d6b4f; font-size: 13.5px; padding: 8px 18px; border-radius: 999px; letter-spacing: .02em; }
+.examples { background: #0e3a2d; }
+.examples .sec-head h2 { color: #fbfaf7; }
+.examples .kicker { color: #57b894; }
+.ex-card { background: #134434; border: 1px solid #1d5a46; transition: transform .3s ease, box-shadow .3s ease; }
+.ex-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.ex-card h3 { color: #fbfaf7; }
+.ex-card p { color: #cfe3da; }
+.ex-card .tag { color: #57b894; }
+.ex-note { color: #b9cec5; border-right-color: #57b894; }
+.step .num { background: linear-gradient(180deg, #0d6b4f, #57b894); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: 1; }
+.hero-photo::after { content: ''; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid #0d6b4f; z-index: -1; }
+@media (max-width: 900px) { .topbar { justify-content: center; } }
