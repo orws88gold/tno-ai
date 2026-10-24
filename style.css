@@ -29,7 +29,7 @@ body { background: var(--cream); }
 .topnav a:hover { color: var(--ink); }
 
 .hero { background: linear-gradient(160deg, var(--deep) 0%, var(--deep2) 60%, #1A2440 100%); color: var(--cream); }
-.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; padding: 96px 40px 104px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; padding: 96px 40px 48px; }
 .hero h1 { font-weight: 900; font-size: 64px; line-height: 1.12; margin: 24px 0 20px; letter-spacing: -0.01em; color: #FAF8F2; }
 .hero h1 em { font-style: normal; color: var(--amber); }
 .hook { font-size: 22px; line-height: 1.6; color: var(--amber-soft); font-weight: 500; margin: 0 0 18px; max-width: 40ch; }
@@ -153,3 +153,9 @@ body, .site { font-weight: 400; }
 .btn-main { padding: 16px 40px; font-size: 16px; }
 .btn-wa { --btn-accent: #F5A524; --btn-wa-hover: rgba(245,165,36,.15); }
 @media (max-width: 900px) { .next-head h2 { font-size: 30px; } .phonepill { display: none; } }
+
+/* process head structurally attached to its block, ~2 lines under CTA */
+.process { padding-top: 0; }
+.process .sec-head { margin-bottom: 40px; }
+.process .sec-head h2 { font-size: 40px; }
+@media (max-width: 900px) { .hero-grid { padding-bottom: 40px; } .process .sec-head h2 { font-size: 30px; } }
