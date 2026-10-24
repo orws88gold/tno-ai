@@ -159,3 +159,12 @@ body, .site { font-weight: 400; }
 .process .sec-head { margin-bottom: 40px; }
 .process .sec-head h2 { font-size: 40px; }
 @media (max-width: 900px) { .hero-grid { padding-bottom: 40px; } .process .sec-head h2 { font-size: 30px; } }
+
+/* mobile ordering: photo moves below process block */
+.hero-photo-m { display: none; }
+@media (max-width: 900px) {
+  .hero-grid .hero-photo { display: none; }
+  .hero-photo-m { display: block; padding: 0 0 24px; }
+  .hero-photo-m .hero-photo img { height: 380px; }
+  .hero-photo-m .photo-cap { margin-top: 16px; }
+}
