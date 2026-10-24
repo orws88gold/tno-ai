@@ -165,7 +165,7 @@ function snapshot(el){
 function pick(el){
   const W=iwin();
   if(!(el instanceof W.HTMLElement))return;
-  if(el===d.body||el===d.documentElement)return;
+  if(el===el.ownerDocument.body||el===el.ownerDocument.documentElement)return;
   deselect();
   sel=el;selPath=pathOf(el);
   snapshot(el);
