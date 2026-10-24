@@ -196,7 +196,7 @@ function rec(props){
 }
 function updateCnt(){
   let n=0;for(const p in pending)n+=Object.keys(pending[p]).length;
-  $('cnt').textContent=n?('('+n+')'):'';
+  const c=$('cnt');if(c)c.textContent=n?('('+n+')'):'';
 }
 function buildPanel(){
   const P=$('panel');if(!sel){P.style.display='none';return;}
