@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tno-ai.com/sitemap.xml
