@@ -1,0 +1,4 @@
+OpenNagish 1.1.5, MIT, Leonid Shoresh.
+Source: https://github.com/leon2589/open-nagish
+Pinned upstream: a32950a0ad1469189c99314c73528a1e56a9d1e9
+Local changes: removed compliance-badge action; replaced remote dyslexia font with local system font and honest label; font-size scaling preserves hierarchy. Self-hosted, no CDN.

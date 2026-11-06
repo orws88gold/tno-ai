@@ -1,0 +1,1 @@
+window.OpenNagishConfig={lang:'he',position:'bottom-left',statementUrl:'/accessibility.html',bottomOffset:20,mobileBottomOffset:18};

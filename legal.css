@@ -1,0 +1,19 @@
+
+/* Accessibility baseline, checked independently of the optional toolbar. */
+.site{width:100%;left:auto;transform:none;max-width:100%;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid #005fcc!important;outline-offset:4px!important;box-shadow:0 0 0 6px #fff!important}
+.skip-link{position:fixed;top:8px;right:8px;transform:translateY(-160%);z-index:2147483646;background:white;color:#12211a;padding:14px 24px;border:2px solid #005fcc}
+.skip-link:focus{transform:none}
+.legal-footer{font-family:system-ui,sans-serif;background:#f7f2e7;color:#12211a;padding:24px max(24px,calc((100% - 1100px)/2));line-height:1.8;text-align:right}
+.legal-links{display:flex;gap:12px 28px;flex-wrap:wrap}.legal-footer a{color:#174c67;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:8px 0}
+.legal-page{max-width:850px;margin:0 auto;padding:30px 24px 60px;line-height:1.85;font-size:18px;overflow-wrap:anywhere;color:#12211a;background:#f7f2e7;font-family:system-ui,sans-serif}
+.legal-page h1{font-size:2rem;line-height:1.3}.legal-page h2{font-size:1.35rem;margin-top:1.6em}.legal-page a{color:#174c67}.legal-note{padding:18px;border-inline-start:4px solid #7b5d20;background:#eee5d1}
+.contact-notice,.financial-disclosure{font-size:16px!important;line-height:1.8!important;max-width:100%!important;margin-top:22px!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:900px){.topbar{position:static}.bar-in{flex-wrap:wrap;gap:16px}.brand-side{flex-wrap:wrap;max-width:100%}.topnav{flex-wrap:wrap;gap:10px 20px}.hero h1{font-size:clamp(2.2rem,8vw,4rem)}.wrap{padding-inline:22px}.brand-slogan{white-space:normal}.brand-lockup .brand{white-space:normal}.legal-page{font-size:17px}}
+
+.kicker{color:#895800}.hero .kicker,.contact .kicker,.dark .kicker{color:#ffc85c}
+.phonepill,.mono,.brand em,.num,.step .num{color:#895800!important}
+.bar-in,.brand-side,.topnav{flex-wrap:wrap}.brand-side{max-width:100%}.bar-in{gap:16px}.topnav a{white-space:nowrap}
+
+bdi{white-space:nowrap}
