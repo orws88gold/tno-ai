@@ -60,4 +60,29 @@
 </div></div></section>
 <section class="contact" id="contact"><div class="wrap reveal on"><div class="kicker">צעד ראשון</div><h2>ספרו לנו מה תוקע את העסק.</h2><p class="hook">שיחה אחת מספיקה כדי לדעת אם יש מה לסדר.</p><div class="cta-row"><a class="btn-main" href="https://wa.me/972545696422">וואטסאפ ישיר</a><a class="btn-text" href="tel:+972545696422">054-569-6422</a></div></div><div class="wrap"><p class="contact-notice">פנייה היא לבחירתכם. נשתמש בפרטים שתמסרו כדי לטפל בפנייה ולחזור אליכם. אין לשלוח מידע רגיש בפנייה ראשונית. <a href="/privacy.html" style="color:inherit">מדיניות הפרטיות</a>.</p></div></section>
 </main><footer class="footer"><div class="wrap foot-in"><span><span dir="ltr">T&O Goldberg AI Solutions</span> · ייעוץ וליווי <bdi>AI</bdi> לעסקים</span><span><a href="/privacy.html" style="color:inherit">מדיניות פרטיות</a> · <span dir="ltr">tno-ai.com</span></span></div></footer>
-</div><footer class="legal-footer"><nav class="legal-links" aria-label="מידע משפטי ונגישות"><a href="/terms.html">תקנון ותנאי שימוש</a><a href="/privacy.html">מדיניות פרטיות</a><a href="/accessibility.html">הצהרת נגישות</a></nav><p>אור גולדברג · <a href="mailto:orws88@gmail.com">orws88@gmail.com</a> · <a href="tel:+972545696422"><bdi>054-569-6422</bdi></a></p></footer><script src="/assets/accessibility/config.js" defer></script><script src="/assets/accessibility/open-nagish.min.js" defer></script></body></html>
+</div><footer class="legal-footer"><nav class="legal-links" aria-label="מידע משפטי ונגישות"><a href="/terms.html">תקנון ותנאי שימוש</a><a href="/privacy.html">מדיניות פרטיות</a><a href="/accessibility.html">הצהרת נגישות</a></nav><p>אור גולדברג · <a href="mailto:orws88@gmail.com">orws88@gmail.com</a> · <a href="tel:+972545696422"><bdi>054-569-6422</bdi></a></p></footer><script src="/assets/accessibility/config.js" defer></script><script src="/assets/accessibility/open-nagish.min.js" defer></script><!-- Site analytics: consent banner + GA4 (consent-gated) + Cloudflare Web Analytics (cookieless) -->
+<script>
+(function(){
+  var GA_ID='G-61V12NPHM5', CF_TOKEN='bc75c2c2d7174945bea99a46462299c2', ACCENT='#F5A524';
+  var KEY='og-analytics-consent';
+  function loadCF(){ if(document.getElementById('cf-beacon'))return; var s=document.createElement('script'); s.id='cf-beacon'; s.type='module'; s.src='https://static.cloudflareinsights.com/beacon.min.js'; s.setAttribute('data-cf-beacon', JSON.stringify({token:CF_TOKEN})); document.body.appendChild(s); }
+  function loadGA(){ if(document.getElementById('ga-tag'))return; var s=document.createElement('script'); s.id='ga-tag'; s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(s); window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);}; gtag('js',new Date()); gtag('config',GA_ID,{anonymize_ip:true});
+    document.addEventListener('click',function(e){ var a=e.target&&e.target.closest?e.target.closest('a'):null; if(!a||!a.href)return; var t=null; if(a.href.indexOf('wa.me')>-1||a.href.indexOf('whatsapp')>-1)t='whatsapp'; else if(a.href.indexOf('tel:')===0)t='phone'; else if(a.href.indexOf('mailto:')===0)t='email'; if(t&&window.gtag)gtag('event','contact_click',{channel:t,page_location:location.href}); });
+  }
+  function banner(){ if(document.getElementById('og-consent'))return; var d=document.createElement('div'); d.id='og-consent'; d.setAttribute('role','dialog'); d.setAttribute('aria-label','הסכמה לשימוש בעוגיות');
+    d.style.cssText='position:fixed;inset-inline:0;bottom:0;z-index:99999;background:#101418;color:#f1f3f5;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;font:14px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;direction:rtl;box-shadow:0 -6px 24px rgba(0,0,0,.35)';
+    d.innerHTML='<span style="max-width:620px">אנחנו משתמשים בעוגיות מדידה של Google Analytics כדי להבין איך משתמשים באתר, ובמדידה סטטיסטית נוספת ללא עוגיות (Cloudflare). אפשר לאשר או לדחות — הגלישה זמינה בכל מקרה. <a href="/privacy.html" style="color:inherit;text-decoration:underline">מדיניות פרטיות</a></span>';
+    var mk=function(txt,primary){ var b=document.createElement('button'); b.type='button'; b.textContent=txt; b.style.cssText='border-radius:999px;padding:8px 22px;font:600 14px system-ui,sans-serif;cursor:pointer;border:1px solid '+(primary?ACCENT:'#5a6470')+';background:'+(primary?ACCENT:'transparent')+';color:'+(primary?'#101418':'#f1f3f5'); return b; };
+    var ok=mk('אישור',true), no=mk('דחייה',false);
+    ok.onclick=function(){ try{localStorage.setItem(KEY,'granted')}catch(e){} d.remove(); loadGA(); };
+    no.onclick=function(){ try{localStorage.setItem(KEY,'denied')}catch(e){} d.remove(); };
+    d.appendChild(ok); d.appendChild(no); document.body.appendChild(d);
+  }
+  loadCF();
+  var c=null; try{c=localStorage.getItem(KEY)}catch(e){}
+  if(c==='granted'){ loadGA(); }
+  else if(c!=='denied'){ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',banner);} else {banner();} }
+})();
+</script>
+<!-- End site analytics -->
+</body></html>
