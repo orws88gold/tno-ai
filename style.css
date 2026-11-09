@@ -181,3 +181,6 @@ body, .site { font-weight: 400; }
 
 /* Keep the approved full business name readable in the compact header. */
 .brand-side .brand{min-width:0}.brand-side .brand>span{display:inline-block;max-width:290px;white-space:normal;line-height:1.25}@media(max-width:650px){.brand-side .brand>span{font-size:16px;max-width:230px}}
+
+/* Approved About text, 2026-11-09 */
+.about{background:#f7f2e7;color:#12211a;scroll-margin-top:90px}.about-body{max-width:780px;margin-inline:auto;font-size:18px;line-height:1.9}.about-body p{margin:0 0 1.25em}.about-body li{margin-bottom:1em}.about-body h3{font-size:1.55rem;line-height:1.5;margin:0 0 1em}.about-body strong{font-weight:700}.about-body li,.about-body p{overflow-wrap:anywhere}@media(max-width:650px){.about-body{font-size:17px;line-height:1.9}}
