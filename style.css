@@ -184,3 +184,6 @@ body, .site { font-weight: 400; }
 
 /* Approved About text, 2026-11-09 */
 .about{background:#f7f2e7;color:#12211a;scroll-margin-top:90px}.about-body{max-width:780px;margin-inline:auto;font-size:18px;line-height:1.9}.about-body p{margin:0 0 1.25em}.about-body li{margin-bottom:1em}.about-body h3{font-size:1.55rem;line-height:1.5;margin:0 0 1em}.about-body strong{font-weight:700}.about-body li,.about-body p{overflow-wrap:anywhere}@media(max-width:650px){.about-body{font-size:17px;line-height:1.9}}
+
+/* Owner request 2026-11-10: centered brand above navigation */
+.topbar .bar-in{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding-top:18px;padding-bottom:16px}.topbar .brand-home{color:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center}.topbar .brand-home .brand-lockup{text-align:center}.topbar .bar-in>.brand-side:last-child{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px}.topbar .topnav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 24px}.topbar .topnav a{min-height:44px;display:flex;align-items:center}.topbar .phonepill{display:none}@media(max-width:650px){.topbar .bar-in{gap:10px;padding:14px 18px}.topbar .topnav{gap:4px 18px;font-size:14px}.topbar .brand-home{gap:12px}.topbar .brand-slogan{white-space:normal}}
