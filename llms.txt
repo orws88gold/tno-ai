@@ -19,3 +19,7 @@ T&O - Automation & AI Solutions - AI consulting, scoping and implementation guid
 - [מדיניות פרטיות](https://tno-ai.com/privacy.html)
 - [תקנון ותנאי שימוש](https://tno-ai.com/terms.html)
 - [הצהרת נגישות](https://tno-ai.com/accessibility.html)
+
+## מאמרים
+- [מאמרים](https://tno-ai.com/blog/)
+- [אפיון מערכת לעסק: מה מגדירים לפני שמתחילים לפתח](https://tno-ai.com/blog/business-system-specification/)
