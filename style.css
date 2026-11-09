@@ -178,3 +178,6 @@ body, .site { font-weight: 400; }
 .hero-photo-inner::after { content: ''; position: absolute; inset: 18px -18px 0 18px; border: 1px solid var(--amber); z-index: 0; pointer-events: none; }
 .hero-photo::after { display: none !important; }
 @media (max-width: 900px) { .hero-photo-inner img { height: 380px; } .hero-photo-inner::after { display: none; } }
+
+/* Keep the approved full business name readable in the compact header. */
+.brand-side .brand{min-width:0}.brand-side .brand>span{display:inline-block;max-width:290px;white-space:normal;line-height:1.25}@media(max-width:650px){.brand-side .brand>span{font-size:16px;max-width:230px}}

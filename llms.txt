@@ -1,8 +1,8 @@
-# T&O Goldberg AI Solutions
+# T&O - Automation & AI Solutions
 
 > ייעוץ, אפיון וליווי פתרונות AI לעסקים בישראל: מבינים את הצורך האמיתי, מאפיינים פתרון מדויק ומלווים את היישום - בשפה פשוטה ובלי הייפ. דוגמאות: צ'אטבוט שעונה בשם העסק, אוטומציה של תהליכים ידניים, סוכן ידע על מסמכים פנימיים.
 
-T&O Goldberg AI Solutions - AI consulting, scoping and implementation guidance for businesses in Israel, led by Or Goldberg.
+T&O - Automation & AI Solutions - AI consulting, scoping and implementation guidance for businesses in Israel, led by Or Goldberg.
 
 ## שירותים
 - הכרת העסק: מיפוי תהליכים ובזבוזי זמן וכסף.
