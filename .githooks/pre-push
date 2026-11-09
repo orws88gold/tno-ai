@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+CHECK=/home/sandbox/media/scripts/site-page-release-check.sh
+[ -x "$CHECK" ] || { echo 'Missing shared page release gate. Stop and restore the shared tooling.' >&2; exit 1; }
+"$CHECK"
