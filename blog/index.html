@@ -9,6 +9,7 @@
   }
   function banner(){ if(document.getElementById('og-consent'))return; var d=document.createElement('div'); d.id='og-consent'; d.setAttribute('role','dialog'); d.setAttribute('aria-label','הסכמה לשימוש בעוגיות');
     d.style.cssText='position:fixed;inset-inline:0;bottom:0;z-index:99999;background:#101418;color:#f1f3f5;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;font:14px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;direction:rtl;box-shadow:0 -6px 24px rgba(0,0,0,.35)';
+    if(window.matchMedia('(max-width:650px)').matches){d.style.paddingLeft='88px';d.style.boxSizing='border-box';}
     d.innerHTML='<span style="max-width:620px">אנחנו משתמשים בעוגיות מדידה של Google Analytics כדי להבין איך משתמשים באתר, ובמדידה סטטיסטית נוספת ללא עוגיות (Cloudflare). אפשר לאשר או לדחות — הגלישה זמינה בכל מקרה. <a href="/privacy.html" style="color:inherit;text-decoration:underline">מדיניות פרטיות</a></span>';
     var mk=function(txt,primary){ var b=document.createElement('button'); b.type='button'; b.textContent=txt; b.style.cssText='border-radius:999px;padding:8px 22px;font:600 14px system-ui,sans-serif;cursor:pointer;border:1px solid '+(primary?ACCENT:'#5a6470')+';background:'+(primary?ACCENT:'transparent')+';color:'+(primary?'#101418':'#f1f3f5'); return b; };
     var ok=mk('אישור',true), no=mk('דחייה',false);
