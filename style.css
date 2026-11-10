@@ -308,3 +308,12 @@ body, .site { font-weight: 400; }
 @media(max-width:360px){.site .topbar .header-name .brand>span{font-size:12px}}
 @media(min-width:901px) and (max-width:1350px){.site .topbar .topnav{font-size:13px;flex-wrap:nowrap}.site .topbar .topnav a{padding-inline:6px;white-space:nowrap}.site .topbar .header-name{max-width:220px}.site .topbar .header-name .brand>span{font-size:17px;max-width:220px}}
 @media(min-width:901px){.site .topbar .topnav{font-size:13px;flex-wrap:nowrap}.site .topbar .topnav a{padding-inline:6px;white-space:nowrap}}
+
+/* Approved T&O brand artwork and a single-line business name. */
+.site .topbar .header-logo{display:block;width:80px;height:80px;object-fit:contain;border-radius:50%;background:#102a43}
+.site .topbar .header-name{width:max-content;max-width:none;white-space:nowrap}
+.site .topbar .header-name .brand{font-size:17px;white-space:nowrap;max-width:none}
+.site .topbar .bar-in{grid-template-columns:1fr auto 1fr}
+@media(min-width:901px){.site .topbar .bar-in{gap:16px;padding-block:10px}.site .topbar .brand-side:last-child{max-width:100%}.site .topbar .topnav{font-size:12px}.site .topbar .topnav a{padding-inline:5px}}
+@media(min-width:651px) and (max-width:1100px){.site .topbar .header-name .brand{font-size:14px}.site .topbar .bar-in{grid-template-columns:90px 1fr;gap:8px}.site .topbar .header-name{justify-self:center}.site .topbar .brand-side:last-child{grid-column:1/-1;justify-self:center}.site .topbar .topnav{font-size:14px}}
+@media(max-width:650px){.site .topbar .header-logo{width:52px;height:52px}.site .topbar .bar-in{grid-template-columns:52px minmax(0,1fr) 48px;gap:6px}.site .topbar .header-name{width:100%;max-width:100%}.site .topbar .header-name .brand{font-size:clamp(9px,2.55vw,13px);white-space:nowrap;text-align:center}.site .topbar .brand-side:last-child{grid-column:auto}}
