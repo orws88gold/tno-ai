@@ -31,3 +31,8 @@
 @media(max-width:650px){.site header.topbar .topnav a,.site header.topbar .topnav a:first-child{padding:7px 11px}}
 /* Long full English name uses the existing menu where side tabs cannot fit at equal sizes. */
 @media(min-width:651px) and (max-width:1100px){.site header.topbar.header--tno .bar-in{grid-template-columns:48px minmax(0,1fr) 145px}.site header.topbar.header--tno .topnav{display:none}.site header.topbar.header--tno .mobile-menu{display:block}.site header.topbar.header--tno .mobile-menu summary{width:48px;height:48px;min-height:48px;padding:10px}.site header.topbar.header--tno .mobile-menu summary>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+
+/* Keep anchor destinations visible below the matched sticky bar. */
+.site main [id]{scroll-margin-top:130px}
+@media(min-width:651px) and (max-width:900px){.site main [id]{scroll-margin-top:214px}}
+@media(max-width:650px){.site main [id]{scroll-margin-top:94px}}
