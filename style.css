@@ -317,3 +317,37 @@ body, .site { font-weight: 400; }
 @media(min-width:901px){.site .topbar .bar-in{gap:16px;padding-block:10px}.site .topbar .brand-side:last-child{max-width:100%}.site .topbar .topnav{font-size:12px}.site .topbar .topnav a{padding-inline:5px}}
 @media(min-width:651px) and (max-width:1100px){.site .topbar .header-name .brand{font-size:14px}.site .topbar .bar-in{grid-template-columns:90px 1fr;gap:8px}.site .topbar .header-name{justify-self:center}.site .topbar .brand-side:last-child{grid-column:1/-1;justify-self:center}.site .topbar .topnav{font-size:14px}}
 @media(max-width:650px){.site .topbar .header-logo{width:52px;height:52px}.site .topbar .bar-in{grid-template-columns:52px minmax(0,1fr) 48px;gap:6px}.site .topbar .header-name{width:100%;max-width:100%}.site .topbar .header-name .brand{font-size:clamp(9px,2.55vw,13px);white-space:nowrap;text-align:center}.site .topbar .brand-side:last-child{grid-column:auto}}
+
+@media(min-width:651px) and (max-width:1100px){.site .topbar .bar-in{min-height:86px;padding:8px 10px;grid-template-columns:minmax(0,1fr) 122px;gap:10px}
+.site .topbar .wealth-logo{height:65px;width:122px}
+.site .topbar .topnav{display:none}
+.site .topbar .bar-in>.brand-side:last-child{justify-content:flex-start}
+.mobile-menu{display:block;position:relative;margin:0;direction:rtl}
+.mobile-menu summary{display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:8px 15px;border:1px solid #102f47;background:#102f47;color:#fff;border-radius:10px;cursor:pointer;list-style:none;font-size:17px;font-weight:700;box-shadow:0 3px 12px #071f3420}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.menu-lines{display:grid;gap:5px;width:24px}
+.menu-lines i{display:block;width:24px;height:2px;background:currentColor;border-radius:2px}
+.mobile-menu[open] summary{background:#31566e}
+.mobile-nav{position:absolute;top:calc(100% + 9px);right:0;width:min(290px,calc(100vw - 20px));display:flex;flex-direction:column;border:1px solid #becbd3;border-radius:12px;background:#f7f8f8;padding:5px;box-shadow:0 14px 28px #071f342b;z-index:50}
+.mobile-nav a{min-height:48px;display:flex;align-items:center;padding:10px 16px;color:#18384e;text-decoration:none;border-bottom:1px solid #d4dde3}
+.mobile-nav a:last-child{border-bottom:0}
+.mobile-nav a:hover,.mobile-nav a:focus-visible{background:#e1e9ee}
+.mobile-menu summary:focus-visible{outline:3px solid #b2a78d;outline-offset:3px}
+}
+/* Full-site design audit: tablet navigation and sticky-anchor clearance. */
+html{scroll-padding-top:0}.site main [id]{scroll-margin-top:130px}.site .num{white-space:nowrap;direction:ltr;unicode-bidi:isolate}.site a:focus-visible,.site summary:focus-visible{outline:3px solid #6487a1;outline-offset:4px}
+@media(min-width:651px) and (max-width:1100px){
+.site .topbar .bar-in{grid-template-columns:48px minmax(0,1fr) 76px;min-height:86px;padding:8px 20px;gap:14px}
+.site .topbar .brand-home{grid-column:3;grid-row:1;width:76px;align-items:center;justify-self:end}
+.site .topbar .header-name{grid-column:2;grid-row:1;max-width:100%;width:100%;justify-self:center;align-items:center;text-align:center}
+.site .topbar .header-name .brand{font-size:20px;white-space:nowrap}.site .topbar .header-name .brand>span{font-size:20px;white-space:nowrap;max-width:none}
+.site .topbar .bar-in>.brand-side:last-child{grid-column:1;grid-row:1;justify-self:start}
+.site .topbar .header-logo{width:64px;height:64px}.site .topbar .brand-home .mono{width:64px;height:64px}
+.mobile-menu summary{width:48px;height:48px;padding:10px}.mobile-menu summary>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+html{scroll-padding-top:0}.site main [id]{scroll-margin-top:100px}
+}
+@media(max-width:650px){html{scroll-padding-top:0}.site main [id]{scroll-margin-top:94px}}
+
+@media(min-width:651px) and (max-width:1100px){.site .topbar .header-name{justify-content:center}.site .topbar .header-name .brand{display:block;width:100%;text-align:center}.site .topbar .header-name .brand>span{display:inline}}
+
+@media(min-width:651px) and (max-width:1100px){#og-consent{padding-left:88px!important}}
