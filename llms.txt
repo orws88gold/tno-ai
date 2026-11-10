@@ -23,3 +23,4 @@ T&O - Automation & AI Solutions - AI consulting, scoping and implementation guid
 ## מאמרים
 - [מאמרים](https://tno-ai.com/blog/)
 - [אפיון מערכת לעסק: מה מגדירים לפני שמתחילים לפתח](https://tno-ai.com/blog/business-system-specification/)
+- [עונים ללקוחות גם בחופשה? כך בודקים אוטומציה לשירות](https://tno-ai.com/blog/customer-service-automation-human-handoff/)
