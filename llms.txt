@@ -28,3 +28,4 @@ T&O - Automation & AI Solutions - AI consulting, scoping and implementation guid
 - [לפני שמחברים בינה מלאכותית: איזה מידע באמת צריך?](https://tno-ai.com/blog/ai-automation-personal-data-minimization/)
 - [עונים ללקוחות גם בחופשה? כך בודקים אוטומציה לשירות](https://tno-ai.com/blog/customer-service-automation-human-handoff/)
 - [אפיון מערכת לעסק: מה מגדירים לפני שמתחילים לפתח](https://tno-ai.com/blog/business-system-specification/)
+- [אוטומציה בוואטסאפ לעסק: מה בודקים לפני שמתחילים](https://tno-ai.com/blog/whatsapp-business-automation-checks/)
