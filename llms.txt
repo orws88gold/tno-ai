@@ -29,3 +29,4 @@ T&O - Automation & AI Solutions - AI consulting, scoping and implementation guid
 - [עונים ללקוחות גם בחופשה? כך בודקים אוטומציה לשירות](https://tno-ai.com/blog/customer-service-automation-human-handoff/)
 - [אפיון מערכת לעסק: מה מגדירים לפני שמתחילים לפתח](https://tno-ai.com/blog/business-system-specification/)
 - [אוטומציה בוואטסאפ לעסק: מה בודקים לפני שמתחילים](https://tno-ai.com/blog/whatsapp-business-automation-checks/)
+- [שירותי אוטומציה לעסקים: איך בוחרים ספק ומה שואלים לפני שחותמים](https://tno-ai.com/blog/choosing-automation-vendor-questions/)
